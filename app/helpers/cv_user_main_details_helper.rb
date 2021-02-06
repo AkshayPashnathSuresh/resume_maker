@@ -1,0 +1,2 @@
+module CvUserMainDetailsHelper
+end
