@@ -1,0 +1,2 @@
+module CvUserAddressHelper
+end
