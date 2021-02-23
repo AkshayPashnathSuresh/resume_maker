@@ -4,7 +4,7 @@
 # Run on Docker
 
 ### 1. Install webpacker [one-time]
-  - docker-compose run web bundle exec rails webpacker:install
+  - `docker-compose run web bundle exec rails webpacker:install`
 
 ### 2. build 
   - `docker-compose build`
