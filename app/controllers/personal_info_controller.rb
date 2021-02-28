@@ -5,7 +5,7 @@ class PersonalInfoController < ApplicationController
   def create
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      render 'cv_user_address/new'
+      render 'address_info/new'
     else
       render 'new'
     end
