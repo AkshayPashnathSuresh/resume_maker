@@ -224,6 +224,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   font-awesome-rails
+  i18n
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
