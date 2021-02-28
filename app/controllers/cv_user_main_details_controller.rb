@@ -1,10 +1,4 @@
-class CvUserMainDetailsController < ApplicationController
+class CvUserMainDetailsController < ApplicationController  
   def new
-  end
-  
-  def create
-  end
-
-  def update
   end
 end
