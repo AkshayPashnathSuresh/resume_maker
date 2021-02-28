@@ -10,9 +10,6 @@ jobs:
   build: # our first job, named "build"
     docker:
       - image: cimg/ruby:2.7.0-buster # use a tailored CircleCI docker image.
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
