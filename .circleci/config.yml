@@ -9,7 +9,7 @@ orbs:
 jobs:
   build: # our first job, named "build"
     docker:
-      - image: cimg/ruby:2.7.0-buster # use a tailored CircleCI docker image.
+      - image: docker pull circleci/ruby:2.7.0 # use a tailored CircleCI docker image.
     steps:
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
