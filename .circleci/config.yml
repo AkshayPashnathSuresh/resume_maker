@@ -19,6 +19,9 @@ jobs:
           TZ: "/usr/share/zoneinfo/Asia/Tokyo"
     steps:
       - checkout
+      - node/install-packages: 
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
       - restore_cache:
           keys:
             - blog-bundle-v1-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
@@ -29,8 +32,6 @@ jobs:
             gem install bundler -v '2.1.4' -N
             bundle -v
             bundle install --jobs=3 --retry=3 --path vendor/bundle
-            npm install --global yarn
-            yarn install
       - save_cache:
           paths:
             - ./vendor/bundle
