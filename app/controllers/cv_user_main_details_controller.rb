@@ -19,5 +19,4 @@ class CvUserMainDetailsController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :technical_skills, :known_languages,
                                   :area_of_interests, :personal_profile, :carreer_objective)
     end
-
 end
