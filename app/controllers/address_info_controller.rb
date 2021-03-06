@@ -6,7 +6,7 @@ class AddressInfoController < ApplicationController
     @address = Address.find_by(user_id: current_user)
     if @address
       if @address.update(address_params)
-        flash[:notice] = "Thank You for updating your address"
+        render 'education_info/new'
       else
         render 'new'
       end
@@ -14,7 +14,7 @@ class AddressInfoController < ApplicationController
       @address = Address.new(address_params)
       @address.user = current_user
       if @address.save
-        flash[:notice] = "Thank You for providing your address"
+        render 'education_info/new'
       else
         render 'new'
       end

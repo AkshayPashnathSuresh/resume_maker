@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :personal_info, only: [:new, :create, :update]
   resources :address_info, only: [:new, :create, :update]
+  resources :education_info, only: [:new, :create, :update]
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
