@@ -18,7 +18,7 @@
             <div class="container-fluid">
                 <!--Body Of the Page -->
                 <h1 class="h4 text-gray-900 mb-4">Enter Your Address!</h1>
-                <%= form_with scope: :address, url: personal_info_index_path, local: true, html: { class: 'user' } do |f| %>
+                <%= form_with scope: :address, url: address_info_index_path, local: true, html: { class: 'user' } do |f| %>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :nationality, autofocus: true, class: 'form-control form-control-user',
@@ -37,7 +37,7 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <%= f.text_field :other, class: 'form-control form-control-user',
+                            <%= f.text_field :remaining_address, class: 'form-control form-control-user',
                             placeholder: 'Enter the remaining address' %>
                         </div>
                     </div>
@@ -55,12 +55,12 @@
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.email_field :mail_id, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your contact number' %>
+                            placeholder: 'Enter your mail id' %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.telephone_field :phone_no, class: 'form-control form-control-user',
-                            placeholder: 'Enter your mail id' %>
+                            placeholder: 'Enter your contact number' %>
                         </div>
                     </div>
                     <div class="form-group row">
