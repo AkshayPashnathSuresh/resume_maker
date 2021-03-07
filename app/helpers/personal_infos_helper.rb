@@ -1,2 +1,2 @@
-module PersonalInfoHelper
+module PersonalInfosHelper
 end
