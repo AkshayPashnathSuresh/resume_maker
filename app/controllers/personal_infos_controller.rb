@@ -1,4 +1,4 @@
-class PersonalInfoController < ApplicationController
+class PersonalInfosController < ApplicationController
   def new
   end
   
