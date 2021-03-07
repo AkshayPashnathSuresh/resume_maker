@@ -1,4 +1,4 @@
-class CvUserMainDetailsController < ApplicationController
+class PersonalInfosController < ApplicationController
   def new
   end
   
