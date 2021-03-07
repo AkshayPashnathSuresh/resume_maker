@@ -1,13 +1,13 @@
 require "test_helper"
 
-class AddressInfoControllerTest < ActionDispatch::IntegrationTest
+class AddressInfosControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get address_info_new_url
+    get address_infos_new_url
     assert_response :success
   end
 
   test "should get create" do
-    get address_info_create_url
+    get address_infos_create_url
     assert_response :success
   end
 end
