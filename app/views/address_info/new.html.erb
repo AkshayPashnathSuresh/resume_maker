@@ -17,67 +17,67 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!--Body Of the Page -->
-                <h1 class="h4 text-gray-900 mb-4">Enter Your Address!</h1>
+                <h1 class="h4 text-gray-900 mb-4"><%= t('address.title') %></h1>
                 <%= form_with scope: :address, url: address_info_index_path, local: true, html: { class: 'user' } do |f| %>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :nationality, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your nationality' %>
+                            placeholder: t('address.nationality') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.text_field :province, class: 'form-control form-control-user',
-                            placeholder: 'Enter your current province' %>
+                            placeholder: t('address.province') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :city, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your current city' %>
+                            placeholder: t('address.city') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.text_field :remaining_address, class: 'form-control form-control-user',
-                            placeholder: 'Enter the remaining address' %>
+                            placeholder: t('address.remaining_address') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :country, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your current country' %>
+                            placeholder: t('address.current_country') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.number_field :post_cd, class: 'form-control form-control-user',
-                            placeholder: 'Enter your current zip code' %>
+                            placeholder: t('address.current_zipcode') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.email_field :mail_id, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your mail id' %>
+                            placeholder: t('address.mail_id') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.telephone_field :phone_no, class: 'form-control form-control-user',
-                            placeholder: 'Enter your contact number' %>
+                            placeholder: t('address.contact_number') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.url_field :linkedIn_url, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your linkedIn Url' %>
+                            placeholder: t('address.linkedIn_url') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.url_field :twitter_url, class: 'form-control form-control-user',
-                            placeholder: 'Enter your Twitter Url' %>
+                            placeholder: t('address.twitter_url') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12 ">
-                            <%= link_to 'Back', new_personal_info_path, class: 'btn btn-secondary btn-user' %>
-                            <%= f.submit 'Next', class: 'btn btn-secondary btn-user float-right'  %>
+                            <%= link_to t('common.back'), new_personal_info_path, class: 'btn btn-secondary btn-user' %>
+                            <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user float-right'  %>
                         </div>
                     </div>
                 <% end %>
