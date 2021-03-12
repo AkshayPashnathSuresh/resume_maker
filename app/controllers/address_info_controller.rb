@@ -3,21 +3,11 @@ class AddressInfoController < ApplicationController
   end
 
   def create
-    @address = Address.find_by(user_id: current_user)
-    if @address
-      if @address.update(address_params)
-        flash[:notice] = "Thank You for updating your address"
-      else
-        render 'new'
-      end
+    @address = Address.where(user_id: current_user).first_or_initialize
+    if @address.update(address_params)
+      # Go to next interface
     else
-      @address = Address.new(address_params)
-      @address.user = current_user
-      if @address.save
-        flash[:notice] = "Thank You for providing your address"
-      else
-        render 'new'
-      end
+      render 'new'
     end
   end
 
