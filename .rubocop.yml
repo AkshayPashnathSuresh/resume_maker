@@ -10,5 +10,6 @@ AllCops:
     - "node_modules/**/*"
     - "config.ru"
     - "Rakefile"
+    - "test/**/*"
 Style/Documentation:
     Enabled: false
