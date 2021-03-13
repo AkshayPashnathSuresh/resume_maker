@@ -1,0 +1,2 @@
+module AddressInfosHelper
+end

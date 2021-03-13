@@ -30,4 +30,26 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  address: 
+    title: "Enter Your Address!"
+    nationality: "Enter your nationality"
+    province: "Enter your current province"
+    city: "Enter your current city"
+    remaining_address: "Enter the remaining address"
+    current_country: "Enter your current country"
+    current_zipcode: "Enter your current zip code"
+    mail_id: "Enter your mail id"
+    contact_number: "Enter your contact number"
+    linkedIn_url: "Enter your linkedIn Url"
+    twitter_url: "Enter your Twitter Url"
+  education:
+    title: "Enter Your Education History!"
+    institution_name: "Enter the Institution name"
+    course_name: "Enter your Course name"
+    grade_point: "Enter your grade point"
+    achievements: "Enter your achivements"
+    from: "From"
+    to: "To"
+  common:
+    next: 'Next'
+    back: 'Back'
