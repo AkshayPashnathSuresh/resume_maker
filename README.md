@@ -15,3 +15,6 @@
 ### 4. start server
   - `docker-compose up`
 
+### 5. start server in debug mode
+  - `docker-compose run --service-ports app`
+
