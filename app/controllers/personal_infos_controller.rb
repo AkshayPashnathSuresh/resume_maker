@@ -12,7 +12,8 @@ class PersonalInfosController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+  end
 
   private
 
