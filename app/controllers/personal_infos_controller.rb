@@ -5,7 +5,7 @@ class PersonalInfosController < ApplicationController
   def create
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      render 'address_infos/new'
+      redirect_to new_address_info_path
     else
       render 'new'
     end
