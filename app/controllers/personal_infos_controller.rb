@@ -1,11 +1,11 @@
-class PersonalInfoController < ApplicationController
+class PersonalInfosController < ApplicationController
   def new
   end
   
   def create
     @user = User.find(current_user.id)
     if @user.update(user_params)
-      render 'address_info/new'
+      render 'address_infos/new'
     else
       render 'new'
     end

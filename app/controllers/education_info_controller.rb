@@ -1,2 +1,0 @@
-class EducationInfoController < ApplicationController
-end
