@@ -1,4 +1,4 @@
-class AddressInfoController < ApplicationController
+class AddressInfosController < ApplicationController
   def new
   end
 
@@ -18,5 +18,4 @@ class AddressInfoController < ApplicationController
                                     :country, :post_cd, :mail_id, :phone_no, 
                                     :linkedIn_url, :twitter_url )
   end
-
 end
