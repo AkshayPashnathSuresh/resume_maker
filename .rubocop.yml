@@ -1,0 +1,14 @@
+AllCops:
+  NewCops: enable
+  Excludes:
+    - "db/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "bin/**/*"
+    - "log/**/*"
+    - "config/**/*"
+    - "node_modules/**/*"
+    - "config.ru"
+    - "Rakefile"
+Style/Documentation:
+    Enabled: false
