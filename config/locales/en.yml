@@ -42,6 +42,14 @@ en:
     contact_number: "Enter your contact number"
     linkedIn_url: "Enter your linkedIn Url"
     twitter_url: "Enter your Twitter Url"
+  education:
+    title: "Enter Your Education History!"
+    institution_name: "Enter the Institution name"
+    course_name: "Enter your Course name"
+    grade_point: "Enter your grade point"
+    achievements: "Enter your achivements"
+    from: "From"
+    to: "To"
   common:
     next: 'Next'
     back: 'Back'

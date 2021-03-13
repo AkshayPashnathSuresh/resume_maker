@@ -5,7 +5,7 @@ class AddressInfosController < ApplicationController
   def create
     @address = Address.where(user_id: current_user).first_or_initialize
     if @address.update(address_params)
-      # Go to next interface
+      redirect_to new_education_info_path
     else
       render 'new'
     end
