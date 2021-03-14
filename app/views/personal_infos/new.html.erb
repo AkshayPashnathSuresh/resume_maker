@@ -17,47 +17,47 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!--Body Of the Page -->
-                <h1 class="h4 text-gray-900 mb-4">Enter Your Personal details!</h1>
+                <h1 class="h4 text-gray-900 mb-4"><%= t('personal.title') %></h1>
                 <%= form_with scope: :user, url: personal_infos_path, local: true, html: { class: 'user' } do |f| %>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :first_name, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: 'Enter your First name' %>
+                            placeholder: t('personal.first_name') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.text_field :last_name, class: 'form-control form-control-user',
-                            placeholder: 'Enter your Last name' %>
+                            placeholder: t('personal.last_name') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                           <%= f.text_area :technical_skills, size: "30x5", class: 'form-control form-control-textarea',
-                            placeholder: 'Enter your technical skills (Press ENTER after every input)' %>
+                            placeholder: t('personal.technical_skills') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.text_area :known_languages, size: "30x5", class: 'form-control form-control-textarea',
-                              placeholder: 'Enter your Language skills (Press ENTER after every input)' %>
+                              placeholder: t('personal.language_skills') %>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <%= f.text_area :area_of_interests, class: 'form-control form-control-textarea',
-                            placeholder: 'Enter your area of interest (Press ENTER after every input)' %>
+                            placeholder: t('personal.area_interest') %>
                     </div>
 
                     <div class="form-group">
                         <%= f.text_area :personal_profile, class: 'form-control form-control-textarea',
-                            placeholder: 'Enter your personal profile' %>
+                            placeholder: t('personal.personal_profile') %>
                     </div>
 
                     <div class="form-group">
                         <%= f.text_area :carreer_objective, class: 'form-control form-control-textarea',
-                            placeholder: 'Enter your carreer objective' %>
+                            placeholder: t('personal.carreer_objective') %>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <%= f.submit "Next", class: 'btn btn-secondary btn-user justify-content-md-end'  %>
+                        <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user justify-content-md-end'  %>
                     </div>
                 <% end %>
                 <!--End Of the Page -->
