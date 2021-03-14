@@ -48,8 +48,14 @@ en:
     course_name: "Enter your Course name"
     grade_point: "Enter your grade point"
     achievements: "Enter your achivements"
-    from: "From"
-    to: "To"
+  work:
+    title: "Enter Your Work History!"
+    company_name: "Enter the company name"
+    designation: "Enter the designation"
+    job_description: "Enter the job description"
   common:
     next: 'Next'
     back: 'Back'
+    from: "From"
+    to: "To"
+  
