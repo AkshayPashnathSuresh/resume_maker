@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
+  resources :work_infos, only: [:new, :create, :update]
   resources :education_infos, only: [:new, :create, :update]
   resources :address_infos, only: [:new, :create, :update]
   resources :personal_infos, only: [:new, :create, :update]
