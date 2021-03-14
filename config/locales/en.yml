@@ -30,6 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  personal:
+    title: "Enter Your Personal details!"
+    first_name: "Enter Your First name"
+    last_name: "Enter Your Last name"
+    technical_skills: "Enter your technical skills (Press ENTER after every input)"
+    language_skills: "Enter your Language skills (Press ENTER after every input)"
+    area_interest: "Enter your area of interest (Press ENTER after every input)"
+    personal_profile: "Enter your personal profile"
+    carreer_objective: "Enter your carreer objective"
   address: 
     title: "Enter Your Address!"
     nationality: "Enter your nationality"
