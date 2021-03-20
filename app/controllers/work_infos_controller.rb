@@ -16,6 +16,6 @@ class WorkInfosController < ApplicationController
 
   def work_params
     params.require(:work).permit(:company_name, :designation, :work_from,
-                                 :work_to, :job_description)
+      :work_to, :job_description)
   end
 end
