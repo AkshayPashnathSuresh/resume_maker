@@ -16,6 +16,6 @@ class EducationInfosController < ApplicationController
 
   def education_params
     params.require(:education).permit(:institution_name, :course_name, :studied_from,
-      :studied_to, :grade_point, :achivements)
+                                      :studied_to,       :grade_point, :achivements)
   end
 end
