@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class EducationInfosController < ApplicationController
-  def new;end
- 
+  def new; end
+
   def create
     @education = Education.where(user_id: current_user).first_or_initialize
-    if (@education.update(education_params))
+    if @education.update education_params
       redirect_to new_work_info_path
     else
       render 'new'

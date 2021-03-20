@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 class WorkInfosController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     @work = Work.where(user_id: current_user).first_or_initialize
-    if(@work.update(work_params))
+    if @work.update work_params
       # Move to Next Interface
     else
       render 'new'
