@@ -1,0 +1,33 @@
+en:
+  personal_infos:
+    title: "Enter Your Personal details!"
+    first_name: "Enter Your First name"
+    last_name: "Enter Your Last name"
+    technical_skills: "Enter your technical skills (Press ENTER after every input)"
+    language_skills: "Enter your Language skills (Press ENTER after every input)"
+    area_interest: "Enter your area of interest (Press ENTER after every input)"
+    personal_profile: "Enter your personal profile"
+    carreer_objective: "Enter your carreer objective"
+  address_infos: 
+    title: "Enter Your Address!"
+    nationality: "Enter your nationality"
+    province: "Enter your current province"
+    city: "Enter your current city"
+    remaining_address: "Enter the remaining address"
+    current_country: "Enter your current country"
+    current_zipcode: "Enter your current zip code"
+    mail_id: "Enter your mail id"
+    contact_number: "Enter your contact number"
+    linkedIn_url: "Enter your linkedIn Url"
+    twitter_url: "Enter your Twitter Url"
+  education_infos:
+    title: "Enter Your Education History!"
+    institution_name: "Enter the Institution name"
+    course_name: "Enter your Course name"
+    grade_point: "Enter your grade point"
+    achievements: "Enter your achivements"
+    from: "From"
+    to: "To"
+  common:
+    next: 'Next'
+    back: 'Back'

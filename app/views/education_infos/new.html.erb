@@ -17,39 +17,39 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!--Body Of the Page -->
-                <h1 class="h4 text-gray-900 mb-4"><%= t('education.title')%></h1>
+                <h1 class="h4 text-gray-900 mb-4"><%= t('education_infos.title')%></h1>
                 <%= form_with scope: :education, url: education_infos_path, local: true, html: { class: 'user' } do |f| %>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :institution_name, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: t('education.institution_name') %>
+                            placeholder: t('education_infos.institution_name') %>
                         </div>
 
                         <div class="col-sm-6">
                             <%= f.text_field :course_name, class: 'form-control form-control-user',
-                            placeholder: t('education.course_name') %>
+                            placeholder: t('education_infos.course_name') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <%= f.label t('education.from') %>
+                            <%= f.label t('education_infos.from') %>
                             <%= f.date_field :studied_from, autofocus: true, class: 'form-control form-control-user' %>
                         </div>
 
                         <div class="col-sm-6">
-                           <%= f.label t('education.to')%>
+                           <%= f.label t('education_infos.to')%>
                            <%= f.date_field :studied_to, class: 'form-control form-control-user' %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.text_field :grade_point, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: t('education.grade_point') %>
+                            placeholder: t('education_infos.grade_point') %>
                         </div>
                     </div>
                     <div class="form-group">
                         <%= f.text_area :achivements, class: 'form-control form-control-textarea',
-                        placeholder: t('education.achievements') %>
+                        placeholder: t('education_infos.achievements') %>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12 ">
