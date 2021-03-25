@@ -17,43 +17,37 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!--Body Of the Page -->
-                <h1 class="h4 text-gray-900 mb-4"><%= t('education_infos.title')%></h1>
-                <%= form_with scope: :education, url: education_infos_path, local: true, html: { class: 'user' } do |f| %>
+                <h1 class="h4 text-gray-900 mb-4"><%= t('work.title')%></h1>
+                <%= form_with scope: :work, url: work_infos_path, local: true, html: { class: 'user' } do |f| %>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
-                            <%= f.text_field :institution_name, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: t('education_infos.institution_name') %>
+                            <%= f.text_field :company_name, autofocus: true, class: 'form-control form-control-user',
+                            placeholder: t('work.company_name') %>
                         </div>
 
                         <div class="col-sm-6">
-                            <%= f.text_field :course_name, class: 'form-control form-control-user',
-                            placeholder: t('education_infos.course_name') %>
+                            <%= f.text_field :designation, class: 'form-control form-control-user',
+                            placeholder: t('work.designation') %>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <%= f.label t('common.from') %>
-                            <%= f.date_field :studied_from, autofocus: true, class: 'form-control form-control-user' %>
+                            <%= f.date_field :work_from, autofocus: true, class: 'form-control form-control-user' %>
                         </div>
 
                         <div class="col-sm-6">
-                            <%= f.label t('common.to')%>
-                           <%= f.date_field :studied_to, class: 'form-control form-control-user' %>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                            <%= f.text_field :grade_point, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: t('education_infos.grade_point') %>
+                           <%= f.label t('common.to')%>
+                           <%= f.date_field :work_to, class: 'form-control form-control-user' %>
                         </div>
                     </div>
                     <div class="form-group">
-                        <%= f.text_area :achivements, class: 'form-control form-control-textarea',
-                        placeholder: t('education_infos.achievements') %>
+                        <%= f.text_area :job_description, class: 'form-control form-control-textarea',
+                        placeholder: t('work.job_description') %>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12 ">
-                            <%= link_to t('common.back'), new_address_info_path, class: 'btn btn-secondary btn-user' %>
+                            <%= link_to t('common.back'), new_education_info_path, class: 'btn btn-secondary btn-user' %>
                             <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user float-right'  %>
                         </div>
                     </div>

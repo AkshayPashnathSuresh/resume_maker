@@ -5,8 +5,8 @@ class EducationInfosController < ApplicationController
 
   def create
     @education = Education.where(user_id: current_user).first_or_initialize
-    if @education.update(education_params)
-    # Move to Work History Page
+    if @education.update education_params
+      redirect_to new_work_info_path
     else
       render 'new'
     end
