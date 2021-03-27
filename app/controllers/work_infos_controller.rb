@@ -4,7 +4,7 @@ class WorkInfosController < ApplicationController
   def new; end
 
   def create
-    @work = Work.where(user_id: current_user).first_or_initialize
+    @work = Work.find_or_create_by(user_id: current_user.id)
     if @work.update work_params
       # Move to Next Interface
     else
