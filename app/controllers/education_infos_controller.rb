@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class EducationInfosController < ApplicationController
-  def new; end
+  def new
+    @education = Education.new
+  end
 
   def create
     @education = Education.find_or_create_by(user_id: current_user.id)

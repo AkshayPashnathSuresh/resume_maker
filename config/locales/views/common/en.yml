@@ -3,4 +3,4 @@ en:
     next: 'Next'
     back: 'Back'
     from: 'From'
-    to: 'To'
+    to: 'To ( If currently doing, no need to select the date )'
