@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class AddressInfosController < ApplicationController
-  def new; end
+  def new
+    @address = Address.new
+  end
 
   def create
     @address = Address.find_or_create_by(user_id: current_user.id)
