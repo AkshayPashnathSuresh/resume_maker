@@ -1,0 +1,3 @@
+en:
+  skills_validator:
+    line_count_error: "should not exceed 5 "
