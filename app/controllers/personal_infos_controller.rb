@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PersonalInfosController < ApplicationController
-  def new 
+  def new
     @user = User.new
   end
 
