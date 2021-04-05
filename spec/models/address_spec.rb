@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
-require 'model_helper'
 
 RSpec.describe Address, type: :model do
   subject do
