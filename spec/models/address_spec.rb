@@ -20,8 +20,6 @@ RSpec.describe Address, type: :model do
   end
 
   describe 'Validations' do
-    it { should belong_to(:user) }
-
     it 'is not valid without a nationality' do
       subject.nationality = nil
       expect(subject).to_not be_valid
@@ -71,5 +69,9 @@ RSpec.describe Address, type: :model do
       subject.twitter_url = nil
       expect(subject).to_not be_valid
     end
+  end
+
+  describe 'Associations' do
+    it { should belong_to(:user) }
   end
 end
