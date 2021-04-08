@@ -13,8 +13,6 @@ RSpec.describe Work, type: :model do
     )
   end
   describe 'Validations' do
-    it { should belong_to(:user) }
-
     it 'is not valid without an company name' do
       subject.company_name = nil
       expect(subject).to_not be_valid
@@ -39,5 +37,9 @@ RSpec.describe Work, type: :model do
       subject.job_description = ModelHelper::PARAGRAPH_VALIDATOR_INPUT
       expect(subject).to_not be_valid
     end
+  end
+
+  describe 'Associations' do
+    it { should belong_to(:user) }
   end
 end
