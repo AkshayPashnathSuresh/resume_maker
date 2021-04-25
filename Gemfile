@@ -25,6 +25,7 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'font-awesome-rails'
 gem 'i18n'
+gem 'simplecov', require: false, group: :test
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'rubocop', require: false
