@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'PersonalInfos', type: :request do
@@ -17,7 +19,7 @@ RSpec.describe 'PersonalInfos', type: :request do
       expect(response.body).to include(I18n.t('personal_infos.title'))
     end
   end
-  
+
   describe 'POST personal_infos#create' do
     context 'Parameters are valid' do
       it 'request should be successful' do
@@ -55,7 +57,6 @@ RSpec.describe 'PersonalInfos', type: :request do
         put create_personal_infos_path @user, params: { user: FactoryBot.attributes_for(:user, :invalid) }
         expect(response.body).to include 'The following errors'
       end
-
     end
   end
 end
