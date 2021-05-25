@@ -1,0 +1,9 @@
+en:
+  education_infos:
+    title: "Enter Your Education History!"
+    institution_name: "Enter the Institution name"
+    course_name: "Enter your Course name"
+    grade_point: "Enter your grade point"
+    achievements: "Enter your achivements"
+    from: "From"
+    to: "To"
