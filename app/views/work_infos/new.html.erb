@@ -1,77 +1,35 @@
-<div id="wrapper">
-    
-    <!-- Sidebar -->
-    <%= render 'welcome/sidebar'%>
-    <!-- End of Sidebar -->
+<h1 class="h4 text-gray-900 mb-4"><%= t('work_infos.title')%></h1>
+<%= form_with scope: :work, url: work_infos_path, local: true, html: { class: 'user' } do |f| %>
+  <div class="form-group row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+          <%= f.text_field :company_name, autofocus: true, class: 'form-control form-control-user',
+          placeholder: t('work_infos.company_name') %>
+      </div>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+      <div class="col-sm-6">
+          <%= f.text_field :designation, class: 'form-control form-control-user',
+          placeholder: t('work_infos.designation') %>
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+          <%= f.label t('common.from') %>
+          <%= f.date_field :work_from, autofocus: true, class: 'form-control form-control-user' %>
+      </div>
 
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Topbar -->
-            <%= render 'welcome/navigationbar'%>
-            <!-- End of Topbar -->
-
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-                <!--Body Of the Page -->
-                <h1 class="h4 text-gray-900 mb-4"><%= t('work_infos.title')%></h1>
-                <%= form_with scope: :work, url: work_infos_path, local: true, html: { class: 'user' } do |f| %>
-                    <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                            <%= f.text_field :company_name, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: t('work_infos.company_name') %>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <%= f.text_field :designation, class: 'form-control form-control-user',
-                            placeholder: t('work_infos.designation') %>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                            <%= f.label t('common.from') %>
-                            <%= f.date_field :work_from, autofocus: true, class: 'form-control form-control-user' %>
-                        </div>
-
-                        <div class="col-sm-6">
-                           <%= f.label t('common.to')%>
-                           <%= f.date_field :work_to, class: 'form-control form-control-user' %>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <%= f.text_area :job_description, class: 'form-control form-control-textarea',
-                        placeholder: t('work_infos.job_description') %>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12 ">
-                            <%= link_to t('common.back'), new_education_info_path, class: 'btn btn-secondary btn-user' %>
-                            <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user float-right'  %>
-                        </div>
-                    </div>
-                <% end %>
-                <!--End Of the Page -->
-            </div>
-            <!-- End Page Content -->
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <%= render 'welcome/footer' %>
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<%= render 'welcome/logoutModal' %>
+      <div class="col-sm-6">
+          <%= f.label t('common.to')%>
+          <%= f.date_field :work_to, class: 'form-control form-control-user' %>
+      </div>
+  </div>
+  <div class="form-group">
+      <%= f.text_area :job_description, class: 'form-control form-control-textarea',
+      placeholder: t('work_infos.job_description') %>
+  </div>
+  <div class="form-group row">
+      <div class="col-sm-12 ">
+          <%= link_to t('common.back'), new_education_info_path, class: 'btn btn-secondary btn-user' %>
+          <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user float-right'  %>
+      </div>
+  </div>
+<% end %>

@@ -1,85 +1,43 @@
-<div id="wrapper">
-    
-    <!-- Sidebar -->
-    <%= render 'welcome/sidebar'%>
-    <!-- End of Sidebar -->
+<h1 class="h4 text-gray-900 mb-4"><%= t('personal_infos.title') %></h1>
+<%= form_with scope: :user, url: personal_infos_path, local: true, html: { class: 'user' } do |f| %>
+  <div class="form-group row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+          <%= f.text_field :first_name, autofocus: true, class: 'form-control form-control-user',
+          placeholder: t('personal_infos.first_name') %>
+      </div>
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+      <div class="col-sm-6">
+          <%= f.text_field :last_name, class: 'form-control form-control-user',
+          placeholder: t('personal_infos.last_name') %>
+      </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <%= f.text_area :technical_skills, size: "30x5", class: 'form-control form-control-textarea',
+          placeholder: t('personal_infos.technical_skills') %>
+      </div>
 
-        <!-- Main Content -->
-        <div id="content">
+      <div class="col-sm-6">
+          <%= f.text_area :known_languages, size: "30x5", class: 'form-control form-control-textarea',
+            placeholder: t('personal_infos.language_skills') %>
+      </div>
+  </div>
 
-            <!-- Topbar -->
-            <%= render 'welcome/navigationbar'%>
-            <!-- End of Topbar -->
+  <div class="form-group">
+      <%= f.text_area :area_of_interests, class: 'form-control form-control-textarea',
+          placeholder: t('personal_infos.area_interest') %>
+  </div>
 
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-                <!--Body Of the Page -->
-                <h1 class="h4 text-gray-900 mb-4"><%= t('personal_infos.title') %></h1>
-                <%= form_with scope: :user, url: personal_infos_path, local: true, html: { class: 'user' } do |f| %>
-                    <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                            <%= f.text_field :first_name, autofocus: true, class: 'form-control form-control-user',
-                            placeholder: t('personal_infos.first_name') %>
-                        </div>
+  <div class="form-group">
+      <%= f.text_area :personal_profile, class: 'form-control form-control-textarea',
+          placeholder: t('personal_infos.personal_profile') %>
+  </div>
 
-                        <div class="col-sm-6">
-                            <%= f.text_field :last_name, class: 'form-control form-control-user',
-                            placeholder: t('personal_infos.last_name') %>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
-                          <%= f.text_area :technical_skills, size: "30x5", class: 'form-control form-control-textarea',
-                            placeholder: t('personal_infos.technical_skills') %>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <%= f.text_area :known_languages, size: "30x5", class: 'form-control form-control-textarea',
-                              placeholder: t('personal_infos.language_skills') %>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <%= f.text_area :area_of_interests, class: 'form-control form-control-textarea',
-                            placeholder: t('personal_infos.area_interest') %>
-                    </div>
-
-                    <div class="form-group">
-                        <%= f.text_area :personal_profile, class: 'form-control form-control-textarea',
-                            placeholder: t('personal_infos.personal_profile') %>
-                    </div>
-
-                    <div class="form-group">
-                        <%= f.text_area :carreer_objective, class: 'form-control form-control-textarea',
-                            placeholder: t('personal_infos.carreer_objective') %>
-                    </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user justify-content-md-end'  %>
-                    </div>
-                <% end %>
-                <!--End Of the Page -->
-            </div>
-            <!-- End Page Content -->
-        </div>
-        <!-- End of Main Content -->
-
-        <!-- Footer -->
-        <%= render 'welcome/footer' %>
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<%= render 'welcome/logoutModal' %>
+  <div class="form-group">
+      <%= f.text_area :carreer_objective, class: 'form-control form-control-textarea',
+          placeholder: t('personal_infos.carreer_objective') %>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user justify-content-md-end'  %>
+  </div>
+<% end %>

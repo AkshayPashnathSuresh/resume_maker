@@ -12,6 +12,10 @@
 
   <body class="bg-gradient-dark">
     <%= render 'layouts/message' %>
-    <%= yield %>
+    <% if current_page?(new_user_session_path) || current_page?(new_user_registration_path)%>
+      <%= yield %>
+    <% else %>
+      <%= render 'layouts/baseform' %>
+    <% end %>
   </body>
 </html>
