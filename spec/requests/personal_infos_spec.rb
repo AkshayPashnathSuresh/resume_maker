@@ -20,7 +20,7 @@ RSpec.describe 'PersonalInfos', type: :request do
     end
   end
 
-  describe 'POST personal_infos#create' do
+  describe 'PUT personal_infos#create' do
     context 'Parameters are valid' do
       it 'request should be successful' do
         sign_in @user
