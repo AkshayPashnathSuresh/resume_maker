@@ -12,6 +12,9 @@ module CvCreator
     config.load_defaults 6.1
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
     config.i18n.default_locale = :en
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.enabled = true
+    config.assets.precompile += ['resumes.css']
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
