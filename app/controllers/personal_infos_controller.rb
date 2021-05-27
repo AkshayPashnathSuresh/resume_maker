@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class PersonalInfosController < ApplicationController
-  def new; end
+  def new
+    @user = User.new
+  end
 
   def create
     @user = User.find(current_user.id)
@@ -11,8 +13,6 @@ class PersonalInfosController < ApplicationController
       render 'new'
     end
   end
-
-  def update; end
 
   private
 
