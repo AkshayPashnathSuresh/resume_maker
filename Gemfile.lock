@@ -89,6 +89,11 @@ GEM
     devise-bootstrap-views (1.1.0)
     diff-lcs (1.4.4)
     erubi (1.10.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.14.2)
     font-awesome-rails (4.7.0.6)
       railties (>= 3.2, < 6.2)
@@ -264,6 +269,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   devise-bootstrap-views (~> 1.0)
+  factory_bot_rails
   font-awesome-rails
   i18n
   jbuilder (~> 2.7)
