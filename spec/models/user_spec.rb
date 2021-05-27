@@ -109,4 +109,10 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
   end
+
+  describe 'Associations' do
+    it { should have_one(:address) }
+    it { should have_one(:education) }
+    it { should have_one(:work) }
+  end
 end
