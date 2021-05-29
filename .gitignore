@@ -6,7 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-echo "coverage" >> .gitignore
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
@@ -39,3 +38,7 @@ echo "coverage" >> .gitignore
 yarn-debug.log*
 .yarn-integrity
 .idea/*
+
+# Ignore SimpleCOV
+/coverage.data
+/coverage/
