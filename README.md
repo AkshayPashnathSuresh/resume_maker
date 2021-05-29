@@ -18,3 +18,8 @@
 
 ### Run rspec
 - `docker-compose run -e RAILS_ENV=test --service-ports  app rspec`
+
+
+# Notes
+  - check Wiki section for more
+    - https://github.com/AkshayPashnathSuresh/cv_creator/wiki
