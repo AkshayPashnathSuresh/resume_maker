@@ -8,6 +8,7 @@
 
 ### 2. build 
   - `docker-compose build`
+
 ### 3. create and migrate DB
   - `docker-compose run --rm app rails db:create`
   - `docker-compose run --rm app rails db:migrate`
@@ -18,3 +19,5 @@
 ### 5. start server in debug mode
   - `docker-compose run --service-ports app`
 
+### 6 Run rspec
+- `docker-compose run --service-ports rspec`
