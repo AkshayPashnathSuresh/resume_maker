@@ -25,6 +25,9 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'font-awesome-rails'
 gem 'i18n'
+gem 'simplecov', require: false, group: :test
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'rubocop', require: false
@@ -32,6 +35,8 @@ gem 'rubocop', require: false
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 5.0.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
@@ -52,6 +57,7 @@ group :development do
 end
 
 group :test do
+  gem 'shoulda-matchers', '~> 4.0'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'

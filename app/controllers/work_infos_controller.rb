@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 class WorkInfosController < ApplicationController
-  def new; end
+  def new
+    @work = Work.new
+  end
 
   def create
-    @work = Work.find_or_create_by(user_id: current_user.id)
+    @work = Work.where(user_id: current_user.id).first_or_initialize
     if @work.update work_params
-      # Move to Next Interface
+      flash[:notice] = t('work_infos_controller.information_saved')
+      redirect_to root_path
     else
       render 'new'
     end

@@ -13,3 +13,8 @@ AllCops:
     - "test/**/*"
 Style/Documentation:
     Enabled: false
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+MethodLength:
+  CountComments: true  # count full line comments?
+  Max: 13

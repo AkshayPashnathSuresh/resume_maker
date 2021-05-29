@@ -1,5 +1,6 @@
+<%= render 'layouts/errors', obj: @work %>
 <h1 class="h4 text-gray-900 mb-4"><%= t('work_infos.title')%></h1>
-<%= form_with scope: :work, url: work_infos_path, local: true, html: { class: 'user' } do |f| %>
+<%= form_with scope: :work, url: create_work_infos_path, local: true, html: { class: 'user' } do |f| %>
   <div class="form-group row">
       <div class="col-sm-6 mb-3 mb-sm-0">
           <%= f.text_field :company_name, autofocus: true, class: 'form-control form-control-user',
@@ -14,12 +15,12 @@
   <div class="form-group row">
       <div class="col-sm-6 mb-3 mb-sm-0">
           <%= f.label t('common.from') %>
-          <%= f.date_field :work_from, autofocus: true, class: 'form-control form-control-user' %>
+          <%= f.date_field :work_from, max: Date.today, autofocus: true, class: 'form-control form-control-user' %>
       </div>
 
       <div class="col-sm-6">
           <%= f.label t('common.to')%>
-          <%= f.date_field :work_to, class: 'form-control form-control-user' %>
+          <%= f.date_field :work_to, max: Date.today, class: 'form-control form-control-user' %>
       </div>
   </div>
   <div class="form-group">
