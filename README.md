@@ -6,14 +6,14 @@
 ### Install webpacker [one-time]
   - `docker-compose run web bundle exec rails webpacker:install`
 
-### build 
+### Build 
   - `docker-compose build`
 
-### create and migrate DB
+### Create and migrate DB
   - `docker-compose run --rm app rails db:create`
   - `docker-compose run --rm app rails db:migrate`
 
-### start server in debug mode
+### Start server in debug mode
   - `docker-compose run --service-ports app`
 
 ### Run rspec
