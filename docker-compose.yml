@@ -42,11 +42,11 @@ services:
       RAILS_ENV: development
     depends_on:
       - db
-  test:
+  rspec:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: test
+    container_name: app
     volumes:
       - .:/var/app
       - shared_data:/var/shared
