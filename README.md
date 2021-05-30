@@ -3,18 +3,23 @@
 
 # Run on Docker
 
-### 1. Install webpacker [one-time]
+### Install webpacker [one-time]
   - `docker-compose run web bundle exec rails webpacker:install`
 
-### 2. build 
+### Build 
   - `docker-compose build`
-### 3. create and migrate DB
+
+### Create and migrate DB
   - `docker-compose run --rm app rails db:create`
   - `docker-compose run --rm app rails db:migrate`
 
-### 4. start server
-  - `docker-compose up`
-
-### 5. start server in debug mode
+### Start server in debug mode
   - `docker-compose run --service-ports app`
 
+### Run rspec
+- `docker-compose run -e RAILS_ENV=test --service-ports  app rspec`
+
+
+# Notes
+  - check Wiki section for more
+    - https://github.com/AkshayPashnathSuresh/cv_creator/wiki
