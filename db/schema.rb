@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_033756) do
+ActiveRecord::Schema.define(version: 2021_06_21_142702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 2021_03_28_033756) do
     t.index ["user_id"], name: "index_educations_on_user_id", unique: true
   end
 
+  create_table "resumes", force: :cascade do |t|
+    t.string "resume_name"
+    t.string "layout_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_resumes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,13 +62,6 @@ ActiveRecord::Schema.define(version: 2021_03_28_033756) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.text "area_of_interests"
-    t.text "technical_skills"
-    t.text "known_languages"
-    t.text "personal_profile"
-    t.text "carreer_objective"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -78,5 +80,6 @@ ActiveRecord::Schema.define(version: 2021_03_28_033756) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "educations", "users"
+  add_foreign_key "resumes", "users"
   add_foreign_key "works", "users"
 end
