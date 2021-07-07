@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Resume < ApplicationRecord
   belongs_to :user
   validates :resume_name, presence: true, length: { minimum: 3, maximum: 25 }
