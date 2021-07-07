@@ -4,9 +4,9 @@ class ResumeInfosController < ApplicationController
   end
 
   def create
-    @resume = Resume.create(user_id: current_user.id)
-    if @resume
-      @resume.update resume_params
+    @resume = Resume.new(user_id: current_user.id)
+    if @resume.update resume_params
+      @resume.save
       redirect_to new_personal_info_path
     else
       render 'new'
