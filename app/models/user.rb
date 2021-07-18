@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :address
   has_one :education
   has_one :work
+  has_many :resumes
   validates :first_name, presence: true, length: { minimum: 3, maximum: 25 }
   validates :last_name, presence: true, length: { minimum: 3, maximum: 25 }
   validates :technical_skills, presence: true, Skills: true
