@@ -8,16 +8,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Google</td>
-          <td><%= link_to 'PDF', resume_path(current_user, format: "pdf") %></td>
-        </tr>
-        <tr>
-        <th scope="row">2</th>
-          <td>Rakuten</td>
-          <td>PDF</td>
-        </tr>
+        <% @resumes.each do |resume| %>
+          <tr>
+            <th scope="row"><%= resume.id %></th>
+            <td><%= resume.resume_name %></td>
+            <td><%= link_to 'PDF', resume_path(current_user, format: "pdf") %></td>
+          </tr>
+        <% end %>
       </tbody>
   </table>
 </div>
