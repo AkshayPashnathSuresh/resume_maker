@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_033756) do
+ActiveRecord::Schema.define(version: 2021_06_19_124320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2021_03_28_033756) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_educations_on_user_id", unique: true
+  end
+
+  create_table "resumes", force: :cascade do |t|
+    t.string "resume_name"
+    t.string "layout_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_resumes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,5 +87,6 @@ ActiveRecord::Schema.define(version: 2021_03_28_033756) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "educations", "users"
+  add_foreign_key "resumes", "users"
   add_foreign_key "works", "users"
 end
