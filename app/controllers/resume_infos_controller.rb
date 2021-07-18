@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResumeInfosController < ApplicationController
   def new
     @resume = Resume.new
