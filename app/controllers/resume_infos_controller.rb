@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 class ResumeInfosController < ApplicationController
   def new
     @resume = Resume.new
   end
 
   def create
-    @resume = Resume.create(user_id: current_user.id)
-    if @resume
-      @resume.update resume_params
+    @resume = Resume.new(user_id: current_user.id)
+    if @resume.update resume_params
+      @resume.save
       redirect_to new_personal_info_path
     else
       render 'new'
