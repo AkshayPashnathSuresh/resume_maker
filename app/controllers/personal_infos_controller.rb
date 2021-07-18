@@ -2,12 +2,12 @@
 
 class PersonalInfosController < ApplicationController
   def new
-    @user = User.new
+    @personal = Personal.new
   end
 
   def create
-    @user = User.find(current_user.id)
-    if @user.update(user_params)
+    @personal = Personal.where(user_id: current_user.id).first_or_initialize
+    if @personal.update(user_params)
       redirect_to new_address_info_path
     else
       render 'new'
@@ -17,7 +17,7 @@ class PersonalInfosController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :technical_skills, :known_languages,
+    params.require(:personal).permit(:first_name, :last_name, :technical_skills, :known_languages,
                                  :area_of_interests, :personal_profile, :carreer_objective)
   end
 end
