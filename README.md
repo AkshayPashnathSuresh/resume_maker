@@ -2,12 +2,11 @@
 
 
 # Run on Docker
+### Build 
+  - `docker-compose build`
 
 ### Install webpacker [one-time]
   - `docker-compose run --rm app rails webpacker:install`
-
-### Build 
-  - `docker-compose build`
 
 ### Create and migrate DB
   - `docker-compose run --rm app rails db:create`
