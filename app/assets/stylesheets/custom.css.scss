@@ -291,6 +291,11 @@
     border-style: none;
   }
   
+  .btn-secondary-spacing 
+  {
+    margin-right: 5px;
+    margin-bottom: 5px !important;
+  }
   input[type="radio"],
   input[type="checkbox"] {
     box-sizing: border-box;
