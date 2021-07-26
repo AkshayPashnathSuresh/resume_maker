@@ -2,5 +2,6 @@ en:
   common:
     next: 'Next'
     back: 'Back'
+    submit: 'Submit'
     from: 'From'
     to: 'To ( If currently doing, no need to select the date )'

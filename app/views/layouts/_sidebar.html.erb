@@ -16,87 +16,44 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <!-- Profile Photo -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProfilePhoto"
-                aria-expanded="true" aria-controls="collapseProfilePhoto">
+            <div class="nav-link">
                 <i class="fa fa-camera" aria-hidden="true"></i>
-                <span><%= t('sidebar.profilePhoto.title') %></span>
-            </a>
-            <div id="collapseProfilePhoto" class="collapse" aria-labelledby="headingProfilePhoto" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header"><%= t('sidebar.profilePhoto.title') %></h6>
-                    <a class="collapse-item" href="#"><%= t('sidebar.common.new') %></a>
-                    <a class="collapse-item" href="#"><%= t('sidebar.common.edit') %></a>
-                </div>
+                <span><%= link_to t('sidebar.profilePhoto.title'), root_path, class:"text-white"%></span>
             </div>
         </li>
 
         <!-- Personal Information -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePersonalInformation"
-                aria-expanded="true" aria-controls="collapsePersonalInformation">
+            <div class="nav-link">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                <span><%= t('sidebar.personalInformation.title') %></span>
-            </a>
-            <div id="collapsePersonalInformation" class="collapse" aria-labelledby="headingPersonalInformation"
-                data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header"><%= t('sidebar.personalInformation.title') %></h6>
-                    <%= link_to t('sidebar.common.new'), new_personal_info_path, class: "collapse-item" %>
-                    <%= link_to t('sidebar.common.edit'), new_personal_info_path, class: "collapse-item" %>
-                </div>
+                <span><%= link_to t('sidebar.personalInformation.title'), edit_personal_info_path(current_user), class:"text-white"%></span>
             </div>
         </li>
 
         <!-- Address Information -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAddressInformation"
-                aria-expanded="true" aria-controls="collapseAddressInformation">
+            <div class="nav-link">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span><%= t('sidebar.addressInformation.title') %></span>
-            </a>
-            <div id="collapseAddressInformation" class="collapse" aria-labelledby="headingAddressInformation"
-                data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header"><%= t('sidebar.addressInformation.title') %></h6>
-                    <%= link_to t('sidebar.common.new'), new_address_info_path, class: "collapse-item" %>
-                    <%= link_to t('sidebar.common.edit'), new_address_info_path, class: "collapse-item" %>
-                </div>
+                <span><%= link_to t('sidebar.addressInformation.title'), new_address_info_path, class:"text-white"%></span>
             </div>
         </li>
 
         <!-- Education History -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEducationHistory"
-                aria-expanded="true" aria-controls="collapseEducationHistory">
+            <div class="nav-link">
                 <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                <span><%= t('sidebar.educationHistory.title') %></span>
-            </a>
-            <div id="collapseEducationHistory" class="collapse" aria-labelledby="headingEducationHistory"
-                data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header"><%= t('sidebar.educationHistory.title') %></h6>
-                    <%= link_to t('sidebar.common.new'), new_education_info_path, class: "collapse-item" %>
-                    <%= link_to t('sidebar.common.edit'), new_education_info_path, class: "collapse-item" %>
-                </div>
+                <span><%= link_to t('sidebar.educationHistory.title'), new_education_info_path, class:"text-white"%></span>
             </div>
         </li>
 
         <!-- Work History -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWorkHistory"
-                aria-expanded="true" aria-controls="collapseWorkHistory">
+            <div class="nav-link">
                 <i class="fa fa-briefcase" aria-hidden="true"></i>
-                <span><%= t('sidebar.workHistory.title') %></span>
-            </a>
-            <div id="collapseWorkHistory" class="collapse" aria-labelledby="headingWorkHistory"
-                data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header"><%= t('sidebar.workHistory.title') %></h6>
-                    <%= link_to t('sidebar.common.new'), new_work_info_path, class: "collapse-item" %>
-                    <%= link_to t('sidebar.common.edit'), new_work_info_path, class: "collapse-item" %>
-                </div>
+                <span><%= link_to t('sidebar.workHistory.title'), new_work_info_path, class:"text-white"%></span>
             </div>
         </li>
+
         <!-- Divider -->
         <hr class="sidebar-divider">
     </ul>
