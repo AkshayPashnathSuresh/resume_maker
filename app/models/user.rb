@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   has_many :personals
   has_one :address
-  has_one :education
+  has_many :educations
   has_one :work
   has_many :resumes
   # Include default devise modules. Others available are:
