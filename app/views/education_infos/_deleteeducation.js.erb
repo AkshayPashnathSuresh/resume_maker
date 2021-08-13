@@ -1,0 +1,4 @@
+document.getElementById('educations<%= @delete_education_id %>').remove();
+if(<%= EducationInfosController.class_variable_get(:@@submitting_records) %> == "0"){
+    document.getElementById('submit').style.display = "none";
+}

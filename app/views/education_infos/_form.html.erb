@@ -1,0 +1,53 @@
+<% obj.each do |education| %>
+    <%= fields_for 'educations[]', education, include_id: false do |f| %>
+        <div id="educations<%= education.id %>">
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <%= f.text_field :institution_name, autofocus: true, class: 'form-control form-control-user',
+                    placeholder: t('education_infos.institution_name') %>
+                </div>
+
+                <div class="col-sm-6">
+                    <%= f.text_field :course_name, class: 'form-control form-control-user',
+                    placeholder: t('education_infos.course_name') %>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <%= f.label t('common.from') %>
+                    <%= f.date_field :studied_from, max: Date.today, autofocus: true, class: 'form-control form-control-user' %>
+                </div>
+
+                <div class="col-sm-6">
+                    <%= f.label t('common.to')%>
+                    <%= f.date_field :studied_to, max: Date.today, class: 'form-control form-control-user' %>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <%= f.text_field :grade_point, autofocus: true, class: 'form-control form-control-user',
+                    placeholder: t('education_infos.grade_point') %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.text_area :achivements, class: 'form-control form-control-textarea',
+                placeholder: t('education_infos.achievements') %>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12 ">
+                    <%= link_to t('education_infos.delete_button'), set_delete_education_ids_path(:delete_education_id => education.id),
+                        method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <% if @educations.last == education %>
+            <div id="neweducation">
+            </div>
+        <% end %>
+    <% end %> 
+<% end %>
+<% if obj.empty?() %>
+    <div id="neweducation">
+    </div>
+<% end %>
