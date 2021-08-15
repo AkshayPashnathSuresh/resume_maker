@@ -1,0 +1,16 @@
+en:
+  sidebar:
+    title: "CV CREATOR"
+    profilePhoto:
+      title: "Profile Photo"
+    personalInformation:
+      title: "Personal Information"
+    addressInformation:
+      title: "Address Information"
+    educationHistory:
+      title: "Education History"
+    workHistory:
+      title: "Work History"
+    common:
+      new: "New"
+      edit: "Edit"
