@@ -1,5 +1,10 @@
-<div class="container-fluid">
-  <%= link_to 'Create CV', new_personal_info_path, 
-      class: 'btn btn-secondary btn-user float-right' %>
-  <%= render 'welcome/resumelist' %>
+<div class="container">
+  <div class="text-center">
+    <% if @personal.count == 0 %>
+      <%= link_to t('welcome.create_cv_button') , new_personal_info_path, 
+          class: 'btn btn-secondary btn-lg  btn-block' %>
+    <% else %>
+      <%= render 'welcome/resumecards' %>
+    <% end %>
+  </div>
 </div>

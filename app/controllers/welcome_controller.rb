@@ -2,6 +2,6 @@
 
 class WelcomeController < ApplicationController
   def index
-    @resumes = Resume.where(user_id: current_user.id)
+    @personal = Personal.where(user_id: current_user.id)
   end
 end
