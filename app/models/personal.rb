@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Personal < ApplicationRecord
   belongs_to :user
   validates :first_name, presence: true, length: { minimum: 3, maximum: 25 }
