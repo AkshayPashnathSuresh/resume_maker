@@ -34,7 +34,7 @@ class EducationInfosController < ApplicationController
     @@education_ids.push(@education_id)
   end
 
-  # Delete an education records from the DB
+  # Delete education records from DB
   def delete_education
     @@delete_education_ids.each do |education_id|
       Education.find_by(id: education_id)&.destroy
@@ -42,7 +42,7 @@ class EducationInfosController < ApplicationController
   end
 
   # Delete education input area from the interface and add education Id 
-  # to the list containing the education Ids to be deleted 
+  # to the list containing the education_Ids to be deleted 
   def set_delete_education_ids
     @@submitting_records -= 1
     @delete_education_id = params[:delete_education_id]
@@ -113,7 +113,7 @@ class EducationInfosController < ApplicationController
     end
   end
 
-  # Get the education Id for the new record
+  # Get education Id for the new record
   def get_new_education_id
     new_id_client = get_new_id_from_client
     new_id_server = get_new_id_from_DB
@@ -127,6 +127,7 @@ class EducationInfosController < ApplicationController
     latest_id = Education.ids.max
     new_id = latest_id.nil? ? '1' : (latest_id + 1) 
   end
+  
   # Get new Id by considering the Ids in the Client Side(Interface)
   # New Id will be the latest Id + 1
   def get_new_id_from_client
