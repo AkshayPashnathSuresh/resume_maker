@@ -1,0 +1,4 @@
+document.getElementById('works<%= @delete_work_id %>').remove();
+if(<%= WorkInfosController.class_variable_get(:@@submitting_records) %> == "0"){
+    document.getElementById('submit').style.display = "none";
+}
