@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :resume_infos, only: [:new]
   resources :resumes, only: [:show]
   get 'add_new_education', to: 'education_infos#add_new_education'
-  get 'set_delete_education_ids', to: 'education_infos#set_delete_education_ids'
   get 'add_new_work', to: 'work_infos#add_new_work'
   get 'set_delete_work_ids', to: 'work_infos#set_delete_work_ids'
+  get 'delete_education', to: 'education_infos#delete_education'
   post '/personal_infos/new', to: 'personal_infos#create', as: 'create_personal_infos'
   post '/personal_infos/edit', to: 'personal_infos#update', as: 'update_personal_infos'
   post '/address_infos/new', to: 'address_infos#create', as: 'create_address_infos'

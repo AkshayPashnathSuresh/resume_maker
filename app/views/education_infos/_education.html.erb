@@ -1,12 +1,13 @@
-<div id="educations<%= @education.id %>">
+<% index = EducationInfosController.class_variable_get(:@@record_count) %>
+<div id="educations<%= index %>">
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" name="educations[<%= @education.id %>][institution_name]" id="educations_<%= @education.id %>_institution_name"
-             class="form-control form-control-user" placeholder="<%= t('education_infos.institution_name') %>"/>
+            <input type="text" name="educations[<%= index %>][institution_name]" id="educations_<%= index %>_institution_name"
+             class="form-control form-control-user", placeholder="<%= t('education_infos.institution_name') %>"/>
         </div>
 
         <div class="col-sm-6">
-            <input type="text" name="educations[<%= @education.id %>][course_name]" id="educations_<%= @education.id %>_course_name"
+            <input type="text" name="educations[<%= index %>][course_name]" id="educations_<%= index %>_course_name"
              class="form-control form-control-user" placeholder="<%= t('education_infos.course_name') %>" />
         </div>
     </div>
@@ -14,32 +15,32 @@
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="from_date"><%= t('common.from') %></label>
-            <input type="date" name="educations[<%= @education.id %>][studied_from]" id="educations_<%= @education.id %>_studied_from" 
+            <input type="date" name="educations[<%= index %>][studied_from]" id="educations_<%= index %>_studied_from" 
                 max='<%= Date.today %>', class="form-control form-control-user"/>
         </div>
 
         <div class="col-sm-6">
             <label for="to_date"><%= t('common.to') %></label>
-            <input type="date" name="educations[<%= @education.id %>][studied_to]" id="educations_<%= @education.id %>studied_to" 
+            <input type="date" name="educations[<%= index %>][studied_to]" id="educations_<%= index %>studied_to" 
                 max='<%= Date.today %>', class="form-control form-control-user"/>
         </div>
     </div>
 
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" name="educations[<%= @education.id %>][grade_point]" id="educations_<%= @education.id %>_grade_point"
+            <input type="text" name="educations[<%= index %>][grade_point]" id="educations_<%= index %>_grade_point"
             class="form-control form-control-user" placeholder="<%= t('education_infos.grade_point') %>" />
         </div>
     </div>
 
     <div class="form-group">
-        <textarea name="educations[<%= @education.id %>][achivements]" id="educations_<%= @education.id %>_achivements"
+        <textarea name="educations[<%= index %>][achivements]" id="educations_<%= index %>_achivements"
          class="form-control form-control-textarea"  placeholder="<%= t('education_infos.achievements') %>"></textarea>
     </div>
 
     <div class="form-group row">
         <div class="col-sm-12 ">
-            <%= link_to t('education_infos.delete_button'), set_delete_education_ids_path(:delete_education_id => @education.id),
+            <%= link_to t('education_infos.delete_button'), delete_education_path(:education_index => index),
                          method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
         </div>
     </div>
