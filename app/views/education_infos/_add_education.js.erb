@@ -1,4 +1,4 @@
 document.getElementById('neweducation').insertAdjacentHTML('beforeend', '<%= j render 'education_infos/education.html' %>');
-if(<%= EducationInfosController.class_variable_get(:@@submitting_records) %> > "0"){
+if(++document.getElementById('submittingrecordcount').value > "0"){
     document.getElementById('submit').style.display = "block";
 }

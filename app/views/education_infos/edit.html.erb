@@ -1,7 +1,7 @@
-<%= render 'layouts/multipleRecordErrors', obj: @error_messages %>
+<%= render 'layouts/multiple_record_errors', obj: @error_messages %>
 <h1 class="h4 text-gray-900 mb-4"><%= t('education_infos.title')%></h1>
 <%= form_tag update_education_infos_path(method: :post) do %>
-    <%= render 'education_infos/form', obj: @educations%>
+    <%= render 'education_infos/form'%>
     <div class="form-group row">
       <div class="col-sm-12 ">
           <%= link_to t('education_infos.add_button'), add_new_education_path, method: :get ,remote: true, class: 'btn btn-secondary btn-user' %>
