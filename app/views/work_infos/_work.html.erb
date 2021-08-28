@@ -1,12 +1,13 @@
-<div id="works<%= @work.id %>">
+<% index = WorkInfosController.class_variable_get(:@@record_count) %>
+<div id="works<%= index %>">
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" name="works[<%= @work.id %>][company_name]" id="works_<%= @work.id %>_company_name"
+            <input type="text" name="works[<%= index %>][company_name]" id="works_<%= index %>_company_name"
              class="form-control form-control-user" placeholder="<%= t('work_infos.company_name') %>"/>
         </div>
 
         <div class="col-sm-6">
-            <input type="text" name="works[<%= @work.id %>][designation]" id="works_<%= @work.id %>_designation"
+            <input type="text" name="works[<%= index %>][designation]" id="works_<%= index %>_designation"
              class="form-control form-control-user" placeholder="<%= t('work_infos.designation') %>" />
         </div>
     </div>
@@ -14,25 +15,25 @@
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="from_date"><%= t('common.from') %></label>
-            <input type="date" name="works[<%= @work.id %>][work_from]" id="works_<%= @work.id %>_work_from" 
+            <input type="date" name="works[<%= index %>][work_from]" id="works_<%= index %>_work_from" 
                 max='<%= Date.today %>', class="form-control form-control-user"/>
         </div>
 
         <div class="col-sm-6">
             <label for="to_date"><%= t('common.to') %></label>
-            <input type="date" name="works[<%= @work.id %>][work_to]" id="works_<%= @work.id %>work_to" 
+            <input type="date" name="works[<%= index %>][work_to]" id="works_<%= index %>work_to" 
                 max='<%= Date.today %>', class="form-control form-control-user"/>
         </div>
     </div>
 
     <div class="form-group">
-        <textarea name="works[<%= @work.id %>][job_description]" id="works_<%= @work.id %>_job_description"
+        <textarea name="works[<%= index %>][job_description]" id="works_<%= index %>_job_description"
          class="form-control form-control-textarea"  placeholder="<%= t('work_infos.job_description') %>"></textarea>
     </div>
 
     <div class="form-group row">
         <div class="col-sm-12 ">
-            <%= link_to t('work_infos.delete_button'), set_delete_work_ids_path(:delete_work_id => @work.id),
+            <%= link_to t('work_infos.delete_button'), delete_work_path(:work_index => index),
                          method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 class EducationInfosController < ApplicationController
   before_action :initialize_error_messages, only: %i[new edit create update]
-  before_action :initialize_education_Infos, only: %i[new edit]
+  before_action :initialize_education_infos, only: %i[new edit]
 
   def new; end
 
@@ -46,7 +46,7 @@ class EducationInfosController < ApplicationController
     @error_messages = []
   end
 
-  def initialize_education_Infos
+  def initialize_education_infos
     if current_user.educations.exists?
       @educations = current_user.educations
       @@record_count = @educations.ids.length

@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class WorkInfosController < ApplicationController
-  before_action :initializeErrorMessages, only: [:new, :edit, :create, :update]
-  before_action :initializeWorkInfos, only: [:new, :edit]
-  before_action :executeWorkData, only: [:create, :update]
+  before_action :initialize_error_messages, only: [:new, :edit, :create, :update]
+  before_action :initialize_work_infos, only: [:new, :edit]
 
   def new
   end
@@ -11,44 +10,35 @@ class WorkInfosController < ApplicationController
   def edit
   end
 
-  # If there is no error in the user-entered inputs,
-  #   then display welcome Page else render existing page
   def create
-    (@update_succes_status)? (redirect_to root_path) : (render 'new')
+    if registration_succeeded?
+      flash[:notice] = t('work_infos.information_saved')
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
-  # If there is no error in the user-entered inputs,
-  #   then display welcome Page else render existing page
   def update
-    (@update_succes_status)? (redirect_to root_path) : (render 'edit')
+    if registration_succeeded?
+      flash[:notice] = t('work_infos.update_success_message')
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
-  # Creates new work input area
   def add_new_work
-    @@submitting_records += 1
-    @work_id = get_new_work_id
-    @work = Work.where(id: @work_id, user_id: current_user.id).first_or_initialize
+    @@record_count += 1
     respond_to do |format|
-      format.js{ render partial: 'work_infos/addwork'}
+      format.js { render partial: 'work_infos/add_work' }
     end
-    @@work_ids.push(@work_id)
   end
 
-  # Delete work records from DB
   def delete_work
-    @@delete_work_ids.each do |work_id|
-      Work.find_by(id: work_id)&.destroy
-    end
-  end
-
-  # Delete work input area from the interface and add work Id 
-  # to the list containing the work_Ids to be deleted 
-  def set_delete_work_ids
-    @@submitting_records -= 1
-    @delete_work_id = params[:delete_work_id]
-    @@delete_work_ids.push(@delete_work_id) 
+    @work_index = params[:work_index]
     respond_to do |format|
-      format.js{ render partial: 'work_infos/deletework'}
+      format.js { render partial: 'work_infos/delete_work' }
     end
   end
 
@@ -59,78 +49,48 @@ class WorkInfosController < ApplicationController
                                  :work_to,      :job_description)
   end
 
-  # Initialize the array that holds error messages
-  def initializeErrorMessages
+  def initialize_error_messages
     @error_messages = []
   end
 
-  # Initialize the arrays and variables that holds the work details.
-  def initializeWorkInfos
-    @@work_ids = []
-    @@delete_work_ids = []
-    setWorkRecords
-  end
-
-  # Get Work record for the current user if exists
-  # Else initialize arrays and variables
-  def setWorkRecords
-    if Work.exists?(user_id: current_user.id)
-      @works = Work.where(user_id: current_user.id)
-      @@work_ids = @works.ids
-      @@submitting_records  = @@work_ids.length
+  def initialize_work_infos
+    if current_user.works.exists?
+      @works = current_user.works
+      @@record_count = @works.ids.length
     else
       @works = []
-      @@work_ids = []
-      @@submitting_records  = 0
+      @@record_count = 0
     end
   end
 
-  # Delete, create or update the work records 
-  def executeWorkData
-    delete_work
-    @works = []
-    @update_succes_status = true
-    params[:works].each do |id, attributes|
-      @work = Work.where(id: id, user_id: current_user.id).first_or_initialize
-      unless @work.update(work_params(attributes))
-        @update_succes_status = false
-        set_error_messages(@work)
-      end
-      retainUserInput(@work)
-    end
-    @error_messages.uniq!
-  end
-
-  # Retain the user entered input for rendering the same page in case of errors.
-  def retainUserInput(inputRecord)
-    @works.push(@work)
-  end
-
-  # Sets the record validation errors
   def set_error_messages(error_record)
     error_record.errors.full_messages.each do |msg|
       @error_messages.push(msg)
     end
   end
 
-  # Get work Id for the new record
-  def get_new_work_id
-    new_id_client = get_new_id_from_client
-    new_id_server = get_new_id_from_DB
-    Work.exists?(id: new_id_client) ? new_id_server : new_id_client
+  def set_work_records
+    @works = []
+    params[:works].each do |_id, attributes|
+      @works.push(current_user.works.new(work_params(attributes)))
+    end
+    @works
   end
 
-  # Get new Id by considering the records in the DB
-  # If there is records in DB, then new ID will be latest ID + 1
-  # If there is no records in DB, then new ID will be  1
-  def get_new_id_from_DB
-    latest_id = Work.ids.max
-    new_id = latest_id.nil? ? '1' : (latest_id + 1) 
-  end
-
-  # Get new Id by considering the Ids in the Client Side(Interface)
-  # New Id will be the latest Id + 1
-  def get_new_id_from_client
-    (@@work_ids.max.nil?) ? 1 : (@@work_ids.max + 1)
+  def registration_succeeded?
+    submitting_records = set_work_records
+    update_succes_status = true
+    Work.transaction do
+      current_user.works.delete_all if current_user.works.exists?
+      success = submitting_records.map(&:save)
+      unless success.all?
+        update_succes_status = false
+        errored = submitting_records.reject { |record| record.errors.blank? }
+        errored.each { |error_record| set_error_messages(error_record) }
+        raise ActiveRecord::Rollback
+      end
+    end
+    @error_messages.uniq!
+    update_succes_status
   end
 end

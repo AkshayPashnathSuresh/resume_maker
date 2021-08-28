@@ -1,47 +1,48 @@
-<% obj.each do |work| %>
-    <%= fields_for 'works[]', work, include_id: false do |f| %>
-        <div id="works<%= work.id %>">
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <%= f.text_field :company_name, autofocus: true, class: 'form-control form-control-user',
-                    placeholder: t('work_infos.company_name') %>
-                </div>
+<% @works.each.with_index(1) do |work,index| %>
+    <div id="works<%= index %>">
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <%= text_field_tag "works[#{index}][company_name]", work.company_name, 
+                    class: 'form-control form-control-user', placeholder: t('work_infos.company_name') %>
+            </div>
 
-                <div class="col-sm-6">
-                    <%= f.text_field :designation, class: 'form-control form-control-user',
-                    placeholder: t('work_infos.designation') %>
-                </div>
+            <div class="col-sm-6">
+                <%= text_field_tag "works[#{index}][designation]", work.designation,
+                    class: 'form-control form-control-user', placeholder: t('work_infos.designation') %>
             </div>
-            <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <%= f.label t('common.from') %>
-                    <%= f.date_field :work_from, max: Date.today, autofocus: true, class: 'form-control form-control-user' %>
-                </div>
-
-                <div class="col-sm-6">
-                    <%= f.label t('common.to')%>
-                    <%= f.date_field :work_to, max: Date.today, class: 'form-control form-control-user' %>
-                </div>
-            </div>
-            <div class="form-group">
-                <%= f.text_area :job_description, class: 'form-control form-control-textarea',
-                placeholder: t('work_infos.job_description') %>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-12 ">
-                    <%= link_to t('work_infos.delete_button'), set_delete_work_ids_path(:delete_work_id => work.id),
-                        method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
-                </div>
-            </div>
-            <hr>
         </div>
-        <% if @works.last == work %>
-            <div id="newwork">
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <%= label_tag t('common.from') %>
+                <%= date_field_tag "works[#{index}][work_from]", work.work_from,
+                    max: Date.today, class: 'form-control form-control-user' %>
             </div>
-        <% end %>
+
+            <div class="col-sm-6">
+                <%= label_tag t('common.to')%>
+                <%= date_field_tag "works[#{index}][work_to]", work.work_to, 
+                    max: Date.today, class: 'form-control form-control-user' %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= text_area_tag "works[#{index}][job_description]", work.job_description, 
+                class: 'form-control form-control-textarea', placeholder: t('work_infos.job_description') %>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 ">
+                <%= link_to t('work_infos.delete_button'), delete_work_path(:work_index => index),
+                    method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <% if @works.last == work %>
+        <div id="newwork">
+        </div>
     <% end %>
 <% end %>
-<% if obj.empty?() %>
+<%= hidden_field_tag 'submittingrecordcount', @works.ids.length %>
+<% if @works.empty?() %>
     <div id="newwork">
     </div>
 <% end %>
