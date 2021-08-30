@@ -1,0 +1,54 @@
+<% @educations.each.with_index(1) do |education,index| %>
+    <div id="educations<%= index %>">
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <%= text_field_tag "educations[#{index}][institution_name]", education.institution_name, 
+                    class: 'form-control form-control-user', placeholder: t('education_infos.institution_name') %>
+            </div>
+
+            <div class="col-sm-6">
+                <%= text_field_tag "educations[#{index}][course_name]", education.course_name,
+                    class: 'form-control form-control-user', placeholder: t('education_infos.course_name') %>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <%= label_tag t('common.from') %>
+                <%= date_field_tag "educations[#{index}][studied_from]", education.studied_from,
+                    max: Date.today, class: 'form-control form-control-user' %>
+            </div>
+
+            <div class="col-sm-6">
+                <%= label_tag t('common.to')%>
+                <%= date_field_tag "educations[#{index}][studied_to]", education.studied_to, 
+                    max: Date.today, class: 'form-control form-control-user' %>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <%= text_field_tag "educations[#{index}][grade_point]", education.grade_point, 
+                    class: 'form-control form-control-user', placeholder: t('education_infos.grade_point') %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= text_area_tag "educations[#{index}][achivements]", education.achivements, 
+                class: 'form-control form-control-textarea', placeholder: t('education_infos.achievements') %>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 ">
+                <%= link_to t('education_infos.delete_button'), delete_education_path(:education_index => index),
+                    method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <% if @educations.last == education %>
+        <div id="neweducation">
+        </div>
+    <% end %>
+<% end %>
+<%= hidden_field_tag 'submittingrecordcount', @educations.ids.length %>
+<% if @educations.empty?() %>
+    <div id="neweducation">
+    </div>
+<% end %>
