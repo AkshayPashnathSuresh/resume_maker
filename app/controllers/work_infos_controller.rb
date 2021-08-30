@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 class WorkInfosController < ApplicationController
-  before_action :initialize_error_messages, only: [:new, :edit, :create, :update]
-  before_action :initialize_work_infos, only: [:new, :edit]
+  before_action :initialize_error_messages, only: %i[new edit create update]
+  before_action :initialize_work_infos, only: %i[new edit]
 
-  def new
-  end
+  def new; end
 
-  def edit
-  end
+  def edit; end
 
   def create
     if registration_succeeded?
@@ -46,7 +44,7 @@ class WorkInfosController < ApplicationController
 
   def work_params(params)
     params.permit(:company_name, :designation, :work_from,
-                                 :work_to,      :job_description)
+                  :work_to, :job_description)
   end
 
   def initialize_error_messages
