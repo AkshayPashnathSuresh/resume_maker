@@ -7,3 +7,5 @@ en:
     achievements: "Enter your achivements"
     from: "From"
     to: "To"
+    delete_button: "Delete Education"
+    add_button: "Add New Education"
