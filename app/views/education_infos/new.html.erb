@@ -4,7 +4,7 @@
     <%= render 'education_infos/form'%>
     <div class="form-group row">
       <div class="col-sm-12 ">
-          <%= link_to t('education_infos.add_button'), add_new_education_path, method: :get ,remote: true, class: 'btn btn-secondary btn-user' %>
+          <%= button_tag t('education_infos.add_button'), type: 'button', onclick: 'addEducation()', class: 'btn btn-secondary btn-user' %>
           <%= submit_tag t('common.next'), id: 'submit', class: 'btn btn-secondary btn-user float-right', style: @educations.empty?() ? "display:none" : "" %>
       </div>
     </div>

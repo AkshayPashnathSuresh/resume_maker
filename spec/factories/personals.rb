@@ -2,5 +2,6 @@
 
 FactoryBot.define do
   factory :personal do
+    first_name { 'First Name' }
   end
 end

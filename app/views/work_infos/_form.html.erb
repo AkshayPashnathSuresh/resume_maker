@@ -41,14 +41,15 @@
         </div>
     <% end %>
 <% end %>
-<%= hidden_field_tag 'submittingrecordcount', @works.ids.length %>
+<%= hidden_field_tag 'submittingrecordcount', @record_count %>
+<%= hidden_field_tag 'workindex', @record_count %>
 <% if @works.empty?() %>
     <div id="newwork">
     </div>
 <% end %>
 <div class="form-group row">
     <div class="col-sm-12 ">
-        <%= link_to t('work_infos.add_button'), add_new_work_path, method: :get ,remote: true, class: 'btn btn-secondary btn-user' %>
+        <%= button_tag t('work_infos.add_button'), type: 'button', onclick: 'addWork()', class: 'btn btn-secondary btn-user' %>
         <%= submit_tag t('common.submit'), id: 'submit', class: 'btn btn-secondary btn-user float-right', style: @works.empty?() ? "display:none" : "" %>
     </div>
 </div>
