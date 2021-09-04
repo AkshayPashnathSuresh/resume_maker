@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 4.7.0'
 gem 'i18n'
 gem 'simplecov', require: false, group: :test
 gem 'wicked_pdf'
