@@ -1,0 +1,10 @@
+<%= render 'layouts/errors', obj: @address %>
+<h1 class="h4 text-gray-900 mb-4"><%= t('address_infos.title') %></h1>
+<%= form_with scope: :address, url: update_address_infos_path, local: true, html: { class: 'user' } do |f| %>
+  <%= render 'address_infos/form', obj: f %>
+  <div class="form-group row">
+      <div class="col-sm-12 ">
+          <%= f.submit t('common.submit'), class: 'btn btn-secondary btn-user float-right'  %>
+      </div>
+  </div>
+<% end %>

@@ -1,11 +1,11 @@
 <%= render 'layouts/multiple_record_errors', obj: @error_messages %>
 <h1 class="h4 text-gray-900 mb-4"><%= t('education_infos.title')%></h1>
-<%= form_tag create_education_infos_path(method: :post) do %>
+<%= form_tag update_education_infos_path(method: :post) do %>
     <%= render 'education_infos/form'%>
     <div class="form-group row">
       <div class="col-sm-12 ">
           <%= button_tag t('education_infos.add_button'), type: 'button', onclick: 'addEducation()', class: 'btn btn-secondary btn-user' %>
-          <%= submit_tag t('common.next'), id: 'submit', class: 'btn btn-secondary btn-user float-right', style: @educations.empty?() ? "display:none" : "" %>
+          <%= submit_tag t('common.submit'), id: 'submit', class: 'btn btn-secondary btn-user float-right', style: @educations.empty?() ? "display:none" : "" %>
       </div>
     </div>
 <% end %>
