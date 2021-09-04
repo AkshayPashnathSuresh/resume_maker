@@ -27,14 +27,14 @@ class WorkInfosController < ApplicationController
   end
 
   def add_new_work
-    @@record_count += 1
+    @index = params[:work_index]
     respond_to do |format|
       format.js { render partial: 'work_infos/add_work' }
     end
   end
 
   def delete_work
-    @work_index = params[:work_index]
+    @index = params[:work_index]
     respond_to do |format|
       format.js { render partial: 'work_infos/delete_work' }
     end
@@ -54,14 +54,14 @@ class WorkInfosController < ApplicationController
   def initialize_work_infos
     if current_user.works.exists?
       @works = current_user.works
-      @@record_count = @works.ids.length
+      @record_count = @works.ids.length
     else
       @works = []
-      @@record_count = 0
+      @record_count = 0
     end
   end
 
-  def set_error_messages(error_record)
+  def error_messages(error_record)
     error_record.errors.full_messages.each do |msg|
       @error_messages.push(msg)
     end
@@ -77,18 +77,17 @@ class WorkInfosController < ApplicationController
 
   def registration_succeeded?
     submitting_records = set_work_records
-    update_succes_status = true
+    success = []
     Work.transaction do
       current_user.works.delete_all if current_user.works.exists?
       success = submitting_records.map(&:save)
       unless success.all?
-        update_succes_status = false
         errored = submitting_records.reject { |record| record.errors.blank? }
-        errored.each { |error_record| set_error_messages(error_record) }
+        errored.each { |error_record| error_messages(error_record) }
         raise ActiveRecord::Rollback
       end
     end
     @error_messages.uniq!
-    update_succes_status
+    success.all?
   end
 end

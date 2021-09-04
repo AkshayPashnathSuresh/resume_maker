@@ -47,7 +47,8 @@
         </div>
     <% end %>
 <% end %>
-<%= hidden_field_tag 'submittingrecordcount', @educations.ids.length %>
+<%= hidden_field_tag 'submittingrecordcount', @record_count %>
+<%= hidden_field_tag 'educationindex', @record_count %>
 <% if @educations.empty?() %>
     <div id="neweducation">
     </div>

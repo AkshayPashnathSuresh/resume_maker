@@ -22,14 +22,14 @@ class EducationInfosController < ApplicationController
   end
 
   def add_new_education
-    @@record_count += 1
+    @index = params[:education_index]
     respond_to do |format|
       format.js { render partial: 'education_infos/add_education' }
     end
   end
 
   def delete_education
-    @education_index = params[:education_index]
+    @index = params[:education_index]
     respond_to do |format|
       format.js { render partial: 'education_infos/delete_education' }
     end
@@ -49,14 +49,14 @@ class EducationInfosController < ApplicationController
   def initialize_education_infos
     if current_user.educations.exists?
       @educations = current_user.educations
-      @@record_count = @educations.ids.length
+      @record_count = @educations.ids.length
     else
       @educations = []
-      @@record_count = 0
+      @record_count = 0
     end
   end
 
-  def set_error_messages(error_record)
+  def error_messages(error_record)
     error_record.errors.full_messages.each do |msg|
       @error_messages.push(msg)
     end
@@ -72,18 +72,17 @@ class EducationInfosController < ApplicationController
 
   def registration_succeeded?
     submitting_records = set_education_records
-    update_succes_status = true
+    success = []
     Education.transaction do
       current_user.educations.delete_all if current_user.educations.exists?
       success = submitting_records.map(&:save)
       unless success.all?
-        update_succes_status = false
         errored = submitting_records.reject { |record| record.errors.blank? }
-        errored.each { |error_record| set_error_messages(error_record) }
+        errored.each { |error_record| error_messages(error_record) }
         raise ActiveRecord::Rollback
       end
     end
     @error_messages.uniq!
-    update_succes_status
+    success.all?
   end
 end
