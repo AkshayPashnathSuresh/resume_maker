@@ -1,6 +1,6 @@
 <%= render 'layouts/multiple_record_errors', obj: @error_messages %>
 <h1 class="h4 text-gray-900 mb-4"><%= t('work_infos.title')%></h1>
-<%= form_tag create_work_infos_path(method: :post) do %>
+<%= form_tag update_work_infos_path(method: :post) do %>
     <%= render 'work_infos/form' %>
 <% end %>
 
