@@ -37,8 +37,9 @@
      width: 100%; 
   }
   .marginHeading {
-    font-size: 30px;
-    font-family: 'AppleGaramond-Bold';
+    //font-size: 30px;
+    //font-family: 'AppleGaramond-Bold';
+    font-weight: bold;
     color: white;
   }
   .marginList {
@@ -89,6 +90,10 @@
   }
   ul.interestList {
     list-style-type: square;
+  }
+  hr.margin-divider {
+    margin: 0 1rem 1rem;
+    border-top: 1px solid #eaecf4;
   }
   #header-pdf {
     height: 40px;

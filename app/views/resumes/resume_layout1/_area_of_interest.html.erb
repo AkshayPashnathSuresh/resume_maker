@@ -1,0 +1,18 @@
+<table>
+  <tbody>
+    <tr>
+      <th class="marginHeading" align="center" style="width: 100%;">
+      AREA OF INTEREST
+      </th>
+    </tr>
+    <tr>
+      <td class="marginList" align="left">
+        <ul class="interestList">
+          <% @personal.area_of_interests.lines.each do |area| %>
+            <li><%= area %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
