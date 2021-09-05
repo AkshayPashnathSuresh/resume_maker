@@ -6,13 +6,16 @@
         <table class="marginMainTable" border="0">
           <tbody>
             <tr>
-              <td align="center" valign="top">
+              <td align="left" valign="top">
                 <br/>
-                <span class="circlePhoto"></span>
-                <%= render 'resumes/resume_layout1/personalInformation' %>
-                <%= render 'resumes/resume_layout1/technicalSkills' %>
-                <%= render 'resumes/resume_layout1/languageSkills' %>
-                <%= render 'resumes/resume_layout1/areaOfInterest' %>
+                <%= render 'resumes/resume_layout1/profile_photo' %>
+                <%= render 'resumes/resume_layout1/personal_information' %>
+                <hr class="margin-divider">
+                <%= render 'resumes/resume_layout1/technical_skills' %>
+                <hr class="margin-divider">
+                <%= render 'resumes/resume_layout1/language_skills' %>
+                <hr class="margin-divider">
+                <%= render 'resumes/resume_layout1/area_of_interest' %>
               </td>
             </tr>
           </tbody>
@@ -24,7 +27,7 @@
             <tr>
               <td valign="top">
                 <%= render 'resumes/resume_layout1/name' %>
-                <%= render 'resumes/resume_layout1/personalProfile' %>
+                <%= render 'resumes/resume_layout1/personal_profile' %>
                 <%= render 'resumes/resume_layout1/experience' %>
                 <%= render 'resumes/resume_layout1/education' %>
                 <%= render 'resumes/resume_layout1/certifications' %>

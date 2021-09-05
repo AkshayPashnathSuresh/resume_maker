@@ -1,0 +1,32 @@
+<table class="educationTable">
+  <tbody>
+    <tr valign="top">
+      <th class="sectionHeading" style="width: 100%;">
+        EDUCATION
+      </th>
+    </tr>
+    <% @educations.each do |education| %>
+      <tr>
+        <td class="experienceDesignation"style="width: 80%;">
+          <%= education.course_name %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td style="width: 100%;">
+          <%= education.institution_name + " | " +  education.studied_from.strftime("%Y-%m") + " ~ " + (education.studied_to.to_s.empty? ? "Present" : education.studied_to.strftime("%Y-%m"))%>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td style="width: 100%;">
+          <ul>
+            <% education.achivements.lines.each do |achivement| %>
+              <li>
+                <%= achivement %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -2,17 +2,15 @@
   <tbody>
     <tr>
       <th class="marginHeading" style="width: 100%;">
-        Technical Skills
+        SKILLS SUMMARY
       </th>
     </tr>
     <tr>
       <td class="marginList" align="left">
         <ul class="interestList">
-          <li>Ruby On Rails</li>
-          <li>Java</li>
-          <li>SQL</li>
-          <li>Web development</li>
-          <li>Mobile Development</li>
+          <% @personal.technical_skills.lines.each do |skill| %>
+            <li><%= skill %></li>
+          <% end %>
         </ul>
       </td>
     </tr>

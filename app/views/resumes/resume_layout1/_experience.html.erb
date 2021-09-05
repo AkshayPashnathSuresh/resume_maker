@@ -1,0 +1,32 @@
+<table class="experienceTable">
+  <tbody>
+    <tr valign="top">
+      <td class="sectionHeading" style="width: 100%;">
+        EXPERIENCE
+      </td>
+    </tr>
+    <% @works.each do |work| %>
+      <tr>
+        <td class="experienceDesignation"style="width: 80%;">
+          <%= work.designation %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td style="width: 100%;">
+          <%= work.company_name + " | " + work.work_from.strftime("%Y-%m") + " ~ " + (work.work_to.to_s.empty? ? "Present" : work.work_to.strftime("%Y-%m")) %>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td style="width: 100%;">
+          <ul>
+            <% work.job_description.lines.each do |description|%>
+              <li>
+                <%= description %>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
