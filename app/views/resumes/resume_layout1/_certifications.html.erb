@@ -8,18 +8,9 @@
     <tr>
       <td style="width: 100%;">
         <ul>
-          <li>
-            Ruby Association Certified Ruby Programmer Gold version 2.1.
-          </li>
-          <li>
-            Oracle Certified Java Programmer.
-          </li>
-          <li>
-            Google IT Support Professional Certification.
-          </li>
-          <li>
-            Scrum Master Certified Enigineer.
-          </li>
+          <% @personal.certifications.lines.each do |certification| %>
+            <li><%= certification %></li>
+          <% end %>
         </ul>
       </td>
     </tr>
