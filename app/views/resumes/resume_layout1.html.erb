@@ -30,7 +30,7 @@
                 <%= render 'resumes/resume_layout1/personal_profile' %>
                 <%= render 'resumes/resume_layout1/experience' %>
                 <%= render 'resumes/resume_layout1/education' %>
-                <%= render 'resumes/resume_layout1/certifications' %>
+                <%= render 'resumes/resume_layout1/certifications' unless @personal.certifications.empty? %>
               </td>
             </tr>
           </tbody>
