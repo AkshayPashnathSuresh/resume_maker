@@ -18,7 +18,6 @@
     border-collapse: "collapse";
      width: 100%; 
      height: 100%;
-     background-color: 	#00008b;
   }
   .contentMainTable{
     border-collapse: "collapse";
@@ -37,8 +36,6 @@
      width: 100%; 
   }
   .marginHeading {
-    //font-size: 30px;
-    //font-family: 'AppleGaramond-Bold';
     font-weight: bold;
     color: white;
   }
@@ -73,20 +70,18 @@
   .name {
     font-size: 50px;
     font-family: 'AppleGaramond-Bold';
-    color: #00008b;
     text-decoration: underline;
     text-underline-position: under;
   }
   .designationName {
     font-size: 20px;
     font-family: 'AppleGaramond-Bold';
-    color: #33A2FF;
+    font-style: italic;
     font-weight: bold;
   }
   .sectionHeading {
     font-size: 20px;
     font-family: 'AppleGaramond-Bold';
-    color: #00008b;
     font-weight: bold;
   }
   .experienceDesignation {

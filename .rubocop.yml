@@ -17,6 +17,6 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context']
 MethodLength:
   CountComments: true  # count full line comments?
-  Max: 18
+  Max: 19
 Metrics/AbcSize:
   Max: 20 
