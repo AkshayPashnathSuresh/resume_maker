@@ -34,6 +34,6 @@ class PersonalInfosController < ApplicationController
   def user_params
     params.require(:personal).permit(:first_name, :last_name, :technical_skills, :known_languages,
                                      :area_of_interests, :personal_profile, :carreer_objective,
-                                     :current_designation, :certifications)
+                                     :current_designation, :certifications, :avatar)
   end
 end

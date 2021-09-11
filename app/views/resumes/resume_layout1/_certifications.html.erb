@@ -1,18 +1,19 @@
 <table class="educationTable">
   <tbody>
     <tr valign="top">
-      <th class="sectionHeading" style="width: 100%;">
-        CERTIFICATIONS
+      <th colspan="2" class="sectionHeading" style="width: 100%;">
+        <i class="fa fa-certificate" aria-hidden="true"></i>&nbsp;CERTIFICATIONS
       </th>
     </tr>
-    <tr>
-      <td style="width: 100%;">
-        <ul>
-          <% @personal.certifications.lines.each do |certification| %>
-            <li><%= certification %></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
+    <% @personal.certifications.lines.each do |certification| %>
+      <tr valign="top">
+        <td width="5%" class="bulletPointMainList" align="center">
+          <i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </td>
+        <td style="width: 95%;">
+          <%= certification %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

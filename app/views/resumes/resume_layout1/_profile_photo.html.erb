@@ -1,8 +1,17 @@
-<table>
+<table width="100%">
   <tbody>
     <tr>
+        <td align="center">
+            <% if @personal.avatar.attached? %>
+                <%= image_tag polymorphic_url(@personal.try(:avatar)), class: "rounded-circle", :size => "200x200" %><br>
+            <% else %>
+                <span class="circlePhoto"></span>
+            <% end %>
+        </td>
+    </tr>
+    <tr>
         <td>
-            &emsp;&emsp;&emsp;&emsp;<span class="circlePhoto"></span>
+          &nbsp;
         </td>
     </tr>
   </tbody>

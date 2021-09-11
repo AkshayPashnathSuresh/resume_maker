@@ -1,18 +1,19 @@
 <table>
   <tbody>
     <tr>
-      <th class="marginHeading" align="center" style="width: 100%;">
-      AREA OF INTEREST
+      <th colspan="2" class="marginHeading" style="width: 100%;">
+        <i class="fa fa-plus-square" aria-hidden="true"></i>&nbsp;AREA OF INTEREST
       </th>
     </tr>
-    <tr>
-      <td class="marginList" align="left">
-        <ul class="interestList">
-          <% @personal.area_of_interests.lines.each do |area| %>
-            <li><%= area %></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
+    <% @personal.area_of_interests.lines.each do |area| %>
+      <tr>
+        <td width="5%" class="bulletPointMarginList" align="left">
+          <i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </td>
+        <td width="95%" class="marginList" align="left">
+          &nbsp;<%= area %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
