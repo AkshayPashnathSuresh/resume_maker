@@ -3,6 +3,6 @@
 <%= form_with scope: :personal, url: create_personal_infos_path, local: true, html: { class: 'user' } do |f| %>
   <%= render 'personal_infos/form', obj: f %>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <%= f.submit t('common.next'), class: 'btn btn-secondary btn-user justify-content-md-end'  %>
+      <%= f.submit t('common.next'), class: 'btn btn-secondary justify-content-md-end'  %>
   </div>
 <% end %>

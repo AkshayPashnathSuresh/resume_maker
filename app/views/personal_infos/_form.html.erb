@@ -1,17 +1,26 @@
+<div class="form-group">
+    <% if @personal.avatar.attached? %>
+        <%= image_tag url_for(@personal.avatar), class: "rounded-circle", :size => "100x100"%>
+    <% else %>
+        <%= obj.label "Profile photo"%>
+    <% end %>
+    <%= obj.file_field :avatar, accept: "image/*"%> <br>
+</div>
+
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.text_field :first_name, autofocus: true, class: 'form-control form-control-user',
+        <%= obj.text_field :first_name, autofocus: true, class: 'form-control',
           placeholder: t('personal_infos.first_name') %>
     </div>
 
     <div class="col-sm-6">
-        <%= obj.text_field :last_name, class: 'form-control form-control-user',
+        <%= obj.text_field :last_name, class: 'form-control',
           placeholder: t('personal_infos.last_name') %>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.text_field :current_designation, autofocus: true, class: 'form-control form-control-user',
+        <%= obj.text_field :current_designation, autofocus: true, class: 'form-control',
           placeholder: t('personal_infos.current_designation') %>
     </div>
 </div>
@@ -46,3 +55,4 @@
     <%= obj.text_area :carreer_objective, class: 'form-control form-control-textarea',
         placeholder: t('personal_infos.carreer_objective') %>
 </div>
+

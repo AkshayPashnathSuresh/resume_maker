@@ -1,18 +1,19 @@
 <table>
   <tbody>
     <tr>
-      <th class="marginHeading" style="width: 100%;">
-        SKILLS SUMMARY
+      <th colspan="2" class="marginHeading" style="width: 100%;">
+        <i class="fa fa-code" aria-hidden="true"></i>&nbsp;SKILLS SUMMARY
       </th>
     </tr>
-    <tr>
-      <td class="marginList" align="left">
-        <ul class="interestList">
-          <% @personal.technical_skills.lines.each do |skill| %>
-            <li><%= skill %></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
+    <% @personal.technical_skills.lines.each do |skill| %>
+      <tr>
+        <td width="5%" class="bulletPointMarginList" align="left">
+          <i class="fa fa-circle fa-xs" aria-hidden="true"></i>
+        </td>
+        <td width="95%" class="marginList" align="left">
+          &nbsp;<%= skill %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
