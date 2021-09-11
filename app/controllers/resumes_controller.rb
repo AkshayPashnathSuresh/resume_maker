@@ -6,6 +6,7 @@ class ResumesController < ApplicationController
     @address = current_user.address
     @works = current_user.works
     @educations = current_user.educations
+    @color_theme = params[:color_theme]
     respond_to do |format|
       format.html
       format.pdf do
