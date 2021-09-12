@@ -1,0 +1,32 @@
+<% @projects.each.with_index(1) do |project,index| %>
+    <div id="projects<%= index %>">
+        <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <%= text_field_tag "projects[#{index}][title]", project.title, 
+                    class: 'form-control form-control-user', placeholder: t('project_infos.title') %>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <%= text_area_tag "projects[#{index}][description]", project.description,  size: "30x5",
+                class: 'form-control form-control-textarea', placeholder: t('project_infos.project_description') %>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12 ">
+                <%= link_to t('project_infos.delete_button'), delete_project_path(:project_index => index),
+                    method: :get ,remote: true, name: 'delete_button', class: 'btn btn-secondary btn-user float-right' %>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <% if @projects.last == project %>
+        <div id="newproject">
+        </div>
+    <% end %>
+<% end %>
+<%= hidden_field_tag 'submittingrecordcount', @record_count %>
+<%= hidden_field_tag 'projectindex', @record_count %>
+<% if @projects.empty?() %>
+    <div id="newproject">
+    </div>
+<% end %>

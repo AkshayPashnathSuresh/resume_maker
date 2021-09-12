@@ -1,0 +1,12 @@
+<%= render 'layouts/multiple_record_errors', obj: @error_messages %>
+<h1 class="h4 text-gray-900 mb-4"><%= t('project_infos.title')%></h1>
+<%= form_tag update_project_infos_path(method: :post) do %>
+    <%= render 'project_infos/form' %>
+    <div class="form-group row">
+        <div class="col-sm-12 ">
+            <%= button_tag t('project_infos.add_button'), type: 'button', onclick: 'addProject()', class: 'btn btn-secondary' %>
+            <%= submit_tag t('common.submit'), id: 'submit', class: 'btn btn-secondary btn-user float-right', style: @projects.empty?() ? "display:none" : "" %>
+        </div>
+    </div>
+<% end %>
+

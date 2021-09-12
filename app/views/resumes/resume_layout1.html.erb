@@ -31,6 +31,7 @@
                 <%= render 'resumes/resume_layout1/experience' %>
                 <%= render 'resumes/resume_layout1/education' %>
                 <%= render 'resumes/resume_layout1/certifications' unless @personal.certifications.empty? %>
+                <%= render 'resumes/resume_layout1/projects' unless @projects.empty? %>
               </td>
             </tr>
           </tbody>

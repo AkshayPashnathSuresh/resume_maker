@@ -9,12 +9,7 @@ class WorkInfosController < ApplicationController
   def edit; end
 
   def create
-    if registration_succeeded?
-      flash[:notice] = t('work_infos.information_saved')
-      redirect_to root_path
-    else
-      render 'new'
-    end
+    registration_succeeded? ? (redirect_to new_project_info_path) : (render 'new')
   end
 
   def update

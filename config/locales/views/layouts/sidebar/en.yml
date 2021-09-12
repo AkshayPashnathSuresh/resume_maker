@@ -11,6 +11,8 @@ en:
       title: "Education History"
     workHistory:
       title: "Work History"
+    projectInformation:
+      title: "Project Information"
     common:
       new: "New"
       edit: "Edit"
