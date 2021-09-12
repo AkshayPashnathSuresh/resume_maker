@@ -15,3 +15,12 @@ window.addWork = function() {
         data: new URLSearchParams({'work_index': index}).toString(),
       })
 }
+
+window.addProject = function() {
+  var index = ++document.getElementById('projectindex').value;
+  Rails.ajax({
+      url: '/add_new_project',
+      type: 'GET',
+      data: new URLSearchParams({'project_index': index}).toString(),
+    })
+}
