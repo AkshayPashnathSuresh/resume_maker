@@ -12,4 +12,12 @@ class Address < ApplicationRecord
   validates :phone_no, presence: true
   validates :linkedIn_url, presence: true
   validates :twitter_url, presence: true
+  validates :repository_url, presence: true, if: :repository?
+  def self.hosting_services
+    ['Select your hosting service', 'Github', 'Bitbucket']
+  end
+
+  def repository?
+    Address.hosting_services[1, 2].include? hosting_service
+  end
 end

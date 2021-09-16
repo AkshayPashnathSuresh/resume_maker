@@ -34,6 +34,6 @@ class AddressInfosController < ApplicationController
   def address_params
     params.require(:address).permit(:nationality, :province, :city, :remaining_address,
                                     :country, :post_cd, :mail_id, :phone_no,
-                                    :linkedIn_url, :twitter_url)
+                                    :linkedIn_url, :twitter_url, :hosting_service, :repository_url)
   end
 end
