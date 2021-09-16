@@ -41,5 +41,23 @@
         <%= @address.linkedIn_url.scan(/.{1,25}/).join("\n") %>
       </td>
     </tr>
+    <tr>
+      <td align="center" valign="top" class="marginList"  style="width: 20%;">
+        <i class="fa fa-twitter-square fa-sm" aria-hidden="true"></i>
+      </td>
+      <td class="marginList" style="width: 80%;">
+        <%= @address.twitter_url.scan(/.{1,25}/).join("\n") %>
+      </td>
+    </tr>
+    <% if Address.hosting_services[1,2].include? @address.hosting_service %>
+      <tr>
+        <td align="center" valign="top" class="marginList"  style="width: 20%;">
+          <i class="fa <%= (Address.hosting_services[1] == @address.hosting_service) ? "fa-github-square" : "fa-bitbucket-square"%> fa-sm" aria-hidden="true"></i>
+        </td>
+        <td class="marginList" style="width: 80%;">
+          <%= @address.repository_url.scan(/.{1,25}/).join("\n") %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

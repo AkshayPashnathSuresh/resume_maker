@@ -24,3 +24,21 @@ window.addProject = function() {
       data: new URLSearchParams({'project_index': index}).toString(),
     })
 }
+var hostingServiceBaseOption = "Select your hosting service";
+window.selectHostingService = function() {
+  checkHostingService();
+}
+document.addEventListener('turbolinks:load', function() {
+  if(document. getElementById("address_hosting_service")){
+    checkHostingService();
+  }
+});
+
+function checkHostingService(){
+  if(document. getElementById("address_hosting_service").value == hostingServiceBaseOption){
+    document. getElementById("address_repository_url"). value = "";
+    document. getElementById("address_repository_url"). disabled = true;
+  }else{
+    document. getElementById("address_repository_url"). disabled = false;
+  }
+}
