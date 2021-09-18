@@ -1,10 +1,10 @@
 en:
   education_infos:
     title: "Enter Your Education History!"
-    institution_name: "Enter the Institution name"
-    course_name: "Enter your Course name"
-    grade_point: "Enter your grade point"
-    achievements: "Enter your achivements"
+    institution_name: "Institution Name"
+    course_name: "Course Name"
+    grade_point: "Grade Point"
+    achievements: "Achivements"
     from: "From"
     to: "To"
     delete_button: "Delete Education"

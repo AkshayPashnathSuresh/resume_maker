@@ -1,8 +1,8 @@
 en:
   project_infos:
-    title: "Enter Your Project details!"
-    project_title: "Enter the project title"
-    project_description: "Enter the project description (Press ENTER after every input)"
+    title: "Enter Your Project Details!"
+    project_title: "Project Title"
+    project_description: "Project Description (Press ENTER after every input)"
     delete_button: "Delete Project"
     add_button: "Add New Project"
     skip_continue: "Skip and continue"
