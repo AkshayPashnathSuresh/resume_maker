@@ -12,7 +12,8 @@
 
   <body class="bg-gradient-dark">
     <%= render 'layouts/message' %>
-    <% if [new_user_session_path, new_user_registration_path, user_registration_path, resume_path(1)].include? request.path %>
+    <% if [new_user_session_path, new_user_registration_path, user_registration_path,
+           resume_path(1), "/404", "/500", not_found_path, internal_server_error_path].include? request.path %>
       <%= yield %>
     <% else %>
       <%= render 'layouts/baseform' %>

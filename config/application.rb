@@ -16,6 +16,8 @@ module CvCreator
     config.assets.paths << Rails.root.join("app", "assets", "images")
     config.assets.enabled = true
     config.assets.precompile += ['resumes.css']
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.exceptions_app = self.routes
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
