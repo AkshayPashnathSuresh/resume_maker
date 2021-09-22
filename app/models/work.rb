@@ -5,5 +5,5 @@ class Work < ApplicationRecord
   validates :company_name, presence: true
   validates :designation, presence: true
   validates :work_from, presence: true
-  validates :job_description, presence: true, Paragraph: true
+  validates :job_description, presence: true
 end
