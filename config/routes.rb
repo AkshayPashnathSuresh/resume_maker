@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :work_infos, only: [:new, :edit]
   resources :education_infos, only: [:new, :edit]
   resources :project_infos, only: [:new, :edit]
-  resources :resume_infos, only: [:new]
   resources :resumes, only: [:show]
   get 'add_new_education', to: 'education_infos#add_new_education'
   get 'add_new_work', to: 'work_infos#add_new_work'
@@ -25,6 +24,5 @@ Rails.application.routes.draw do
   post '/work_infos/:id/edit', to: 'work_infos#update', as: 'update_work_infos'
   post '/project_infos/new', to: 'project_infos#create', as: 'create_project_infos'
   post '/project_infos/:id/edit', to: 'project_infos#update', as: 'update_project_infos'
-  post '/resume_infos/new', to: 'resume_infos#create', as: 'resume_work_infos'
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
