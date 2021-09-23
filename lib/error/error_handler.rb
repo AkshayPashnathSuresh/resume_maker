@@ -5,10 +5,10 @@ module Error
     def self.included(clazz)
       clazz.class_eval do
         rescue_from ActiveRecord::RecordNotFound do |_e|
-          render(status: 500)
+          render status: 500
         end
         rescue_from StandardError do |_e|
-          render(status: 500)
+          render status: 500
         end
       end
     end
