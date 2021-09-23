@@ -11,7 +11,7 @@ class ResumesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "Resume. #{current_user.id}",
+        render pdf: "ResumeMaker. #{current_user.id}",
                page_size: 'A4',
                template: 'resumes/resume_layout1.html.erb',
                layout: 'resume_pdf.html.erb',
