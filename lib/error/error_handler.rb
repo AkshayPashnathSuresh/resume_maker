@@ -5,10 +5,10 @@ module Error
     def self.included(clazz)
       clazz.class_eval do
         rescue_from ActiveRecord::RecordNotFound do |_e|
-          redirect_to not_found_path
+          render(status: 500)
         end
         rescue_from StandardError do |_e|
-          redirect_to internal_server_error_path
+          render(status: 500)
         end
       end
     end
