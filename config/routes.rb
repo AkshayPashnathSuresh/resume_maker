@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
+  match '/404', to: 'errors#not_found', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
   resources :personal_infos, only: [:new, :edit]
   resources :address_infos, only: [:new, :edit]
   resources :work_infos, only: [:new, :edit]
