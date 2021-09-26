@@ -16,7 +16,7 @@
                 <% if current_user.personal != nil && current_user.personal.avatar.attached? %>
                     <%= image_tag url_for(current_user.personal.avatar), class: "img-profile rounded-circle" %>
                 <% else %>
-                    <%= image_tag "undraw_profile", :class => "img-profile rounded-circle", :alt => "" %>
+                    <%= image_tag "profile_dummy.png", :class => "img-profile rounded-circle", :alt => "" %>
                 <% end %>
             </a>
             <!-- Dropdown - User Information -->
