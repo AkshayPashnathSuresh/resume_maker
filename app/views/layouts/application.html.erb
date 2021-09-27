@@ -12,8 +12,8 @@
 
   <body class="bg-gradient-dark">
     <%= render 'layouts/message' %>
-    <% if [new_user_session_path, new_user_registration_path, user_registration_path,
-           resume_path(1), "/404", "/500"].include? request.path %>
+    <% non_base_form =  ([new_user_session_path, new_user_registration_path, user_registration_path, "/404", "/500"].include? request.path) || (request.path.include? "resumes") %>
+    <% if non_base_form %>
       <%= yield %>
     <% else %>
       <%= render 'layouts/baseform' %>
