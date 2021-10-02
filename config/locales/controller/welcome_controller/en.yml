@@ -1,0 +1,3 @@
+en:
+  welcome_controller:
+    user_delete_message: "User account deleted succcessfully"

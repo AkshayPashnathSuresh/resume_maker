@@ -3,3 +3,6 @@ en:
     create_cv_button: "Create CV"
     resume_template_title: "Resume Template"
     resume_template_description: "If you like this template, feel free to download your resume!!"
+    settings:
+      settings_title: "Settings"
+      delete_button: "Delete User account"

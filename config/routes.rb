@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :education_infos, only: [:new, :edit]
   resources :project_infos, only: [:new, :edit]
   resources :resumes, only: [:show]
+  resources :welcome, only: [:destroy]
+  get 'settings', to: 'welcome#settings'
   get 'add_new_education', to: 'education_infos#add_new_education'
   get 'add_new_work', to: 'work_infos#add_new_work'
   get 'add_new_project', to: 'project_infos#add_new_project'

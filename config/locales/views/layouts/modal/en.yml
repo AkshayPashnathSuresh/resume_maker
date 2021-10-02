@@ -1,0 +1,8 @@
+en:
+  modal:
+    account_delete_modal:
+      confirm_message: "Are you sure to Delete?"
+      description: "Deleting your account will destroy all the data you have saved"
+      delete_button: "Delete User account"
+    common:
+      cancel_button: "Cancel"
