@@ -21,4 +21,4 @@
 
 # Notes
   - check Wiki section for more
-    - https://github.com/AkshayPashnathSuresh/cv_creator/wiki
+    - https://github.com/AkshayPashnathSuresh/resume_maker/wiki
