@@ -1,4 +1,4 @@
-FROM ruby:2.7.0
+FROM --platform=linux/amd64 ruby:2.7.0
 
 ENV APP_PATH /var/app
 ENV BUNDLE_VERSION 2.1.4
