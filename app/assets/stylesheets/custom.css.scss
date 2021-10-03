@@ -2322,7 +2322,24 @@
     border-radius: 0.35rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-  
+  .btn-blue{
+    background-color: #00008b !important;
+    color: #FFFFFF !important;
+  }
+
+  .btn-dark-grey{
+    background-color: #2E3030 !important;
+    color: #FFFFFF !important;
+  }
+
+  .btn-cyan{
+    background-color: #1198B9 !important;
+    color: #FFFFFF !important;
+  }
+  .btn-dark-blue{
+    background-color: #091438 !important;
+    color: #FFFFFF !important;
+  }
   @media (prefers-reduced-motion: reduce) {
     .btn {
       transition: none;
@@ -4467,7 +4484,11 @@
     border: 1px solid #e3e6f0;
     border-radius: 0.35rem;
   }
-  
+  .card-img-top {
+    width: 100%;
+    height: 50vh;
+    object-fit: contain;
+  }
   .card > hr {
     margin-right: 0;
     margin-left: 0;

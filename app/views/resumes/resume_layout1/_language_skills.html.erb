@@ -1,17 +1,17 @@
 <table>
   <tbody>
     <tr>
-      <td colspan="2" class="marginHeading" style="width: 100%;">
-        <i class="fa fa-globe" aria-hidden="true"></i>&nbsp;LANGAUGES
-      </td>
+      <th colspan="2" class="marginHeading" style="width: 300px;">
+        &nbsp;<i class="fa fa-globe" aria-hidden="true"></i>&nbsp;LANGAUGES
+      </th>
     </tr>
     <% @personal.known_languages.lines.each do |skill| %>
       <tr>
-        <td width="5%" class="bulletPointMarginList" align="left">
+        <td style="width: 20%;" class="bulletPointMarginList" align="center">
           <i class="fa fa-circle fa-xs" aria-hidden="true"></i>
         </td>
-        <td width="95%" class="marginList" align="left">
-          &nbsp;<%= skill %>
+        <td style="width: 80%;" class="marginList" align="left">
+          <div class="divMarginListBullets"><%= skill %></div>
         </td>
       </tr>
     <% end %>

@@ -1,8 +1,8 @@
 <table>
   <tbody>
     <tr>
-      <td colspan="2" class="marginHeading" style="width: 100%;">
-        CONTACT ME AT
+      <td colspan="2" class="marginHeading" style="width: 300px;">
+        &nbsp;CONTACT ME AT
       </td>
     </tr>
     <tr>
@@ -38,7 +38,7 @@
         <i class="fa fa-linkedin-square fa-sm" aria-hidden="true"></i>
       </td>
       <td class="marginList" style="width: 80%;">
-        <%= @address.linkedIn_url.scan(/.{1,25}/).join("\n") %>
+        <div style="width: 100%; word-break:break-word;"><%= @address.linkedIn_url %></div>
       </td>
     </tr>
     <tr>
@@ -46,7 +46,7 @@
         <i class="fa fa-twitter-square fa-sm" aria-hidden="true"></i>
       </td>
       <td class="marginList" style="width: 80%;">
-        <%= @address.twitter_url.scan(/.{1,25}/).join("\n") %>
+        <div style="width: 100%; word-break:break-word;"><%= @address.twitter_url %></div>
       </td>
     </tr>
     <% if Address.hosting_services[1,2].include? @address.hosting_service %>
@@ -55,7 +55,7 @@
           <i class="fa <%= (Address.hosting_services[1] == @address.hosting_service) ? "fa-github-square" : "fa-bitbucket-square"%> fa-sm" aria-hidden="true"></i>
         </td>
         <td class="marginList" style="width: 80%;">
-          <%= @address.repository_url.scan(/.{1,25}/).join("\n") %>
+          <div style="width: 100%; word-break:break-word;"><%= @address.repository_url %></div>
         </td>
       </tr>
     <% end %>
