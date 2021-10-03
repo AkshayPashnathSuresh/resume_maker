@@ -1,17 +1,17 @@
 <table>
   <tbody>
     <tr>
-      <th colspan="2" class="marginHeading" style="width: 100%;">
-        <i class="fa fa-code" aria-hidden="true"></i>&nbsp;SKILLS SUMMARY
+      <th colspan="2" class="marginHeading" style="width: 300px;">
+        &nbsp;<i class="fa fa-code" aria-hidden="true"></i>&nbsp;SKILLS SUMMARY
       </th>
     </tr>
     <% @personal.technical_skills.lines.each do |skill| %>
       <tr>
-        <td width="5%" class="bulletPointMarginList" align="left">
+        <td style="width: 20%;" class="bulletPointMarginList" align="center">
           <i class="fa fa-circle fa-xs" aria-hidden="true"></i>
         </td>
-        <td width="95%" class="marginList" align="left">
-          &nbsp;<%= skill %>
+        <td style="width: 80%;" class="marginList" align="left">
+          <div class="divMarginListBullets"><%= skill %></div>
         </td>
       </tr>
     <% end %>
