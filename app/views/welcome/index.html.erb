@@ -1,7 +1,7 @@
 <div class="container">
   <div class="text-center">
     <% if @personal.count == 0 %>
-      <%= link_to t('welcome.create_cv_button') , new_personal_info_path, 
+      <%= link_to t('welcome.create_resume_button') , new_personal_info_path, 
           class: 'btn btn-secondary btn-lg  btn-block' %>
     <% else %>
       <%= render 'welcome/resumecards' %>

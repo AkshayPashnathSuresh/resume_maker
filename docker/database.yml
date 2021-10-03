@@ -9,13 +9,13 @@ default: &default
 
 development:
   <<: *default
-  database: cv_creator_development
+  database: resume_maker_development
 
 test:
   <<: *default
-  database: cv_creator_test
+  database: resume_maker_test
 
 production:
   <<: *default
-  database: cv_creator_production
+  database: resume_maker_production
 
