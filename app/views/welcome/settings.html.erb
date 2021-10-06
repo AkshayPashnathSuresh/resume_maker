@@ -1,7 +1,7 @@
 <h1 class="h4 text-gray-900 mb-4"><%= t('welcome.settings.settings_title')%></h1>
 <div class="col-sm-12 text-center">
     <% if current_user.personal != nil && current_user.personal.avatar.attached? %>
-        <%= image_tag url_for(current_user.personal.avatar), class: "img-profile rounded-circle", :size => "200x200"  %>
+        <%= image_tag image_path('dummy_user_image.jpeg'), :class => "img-profile rounded-circle", :alt => "", :size => "200x200" %>
     <% else %>
         <%= image_tag image_path('dummy_user_image.jpeg'), :class => "img-profile rounded-circle", :alt => "", :size => "200x200" %>
     <% end %>

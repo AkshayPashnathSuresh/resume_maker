@@ -14,7 +14,7 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.email %></span>
                 <% if current_user.personal != nil && current_user.personal.avatar.attached? %>
-                    <%= image_tag url_for(current_user.personal.avatar), class: "img-profile rounded-circle" %>
+                    <%= image_tag image_path('profile_dummy.png'), :class => "img-profile rounded-circle", :alt => "" %>
                 <% else %>
                     <%= image_tag image_path('profile_dummy.png'), :class => "img-profile rounded-circle", :alt => "" %>
                 <% end %>
