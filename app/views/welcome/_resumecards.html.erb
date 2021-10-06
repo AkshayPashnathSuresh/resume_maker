@@ -5,7 +5,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= t('welcome.resume_template_title') %></h5>
         <p class="card-text"><%= t('welcome.resume_template_description') %></p>
-        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#00008b;"), class: "btn btn-blue" %>
+        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#00008b;"), class: "btn btn-blue", target: "_blank" %>
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= t('welcome.resume_template_title') %></h5>
         <p class="card-text"><%= t('welcome.resume_template_description') %></p>
-        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#2E3030;"), class: "btn btn-dark-grey" %>
+        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#2E3030;"), class: "btn btn-dark-grey", target: "_blank" %>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= t('welcome.resume_template_title') %></h5>
         <p class="card-text"><%= t('welcome.resume_template_description') %></p>
-        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#1198B9;"), class: "btn btn-cyan" %>
+        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#1198B9;"), class: "btn btn-cyan", target: "_blank" %>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= t('welcome.resume_template_title') %></h5>
         <p class="card-text"><%= t('welcome.resume_template_description') %></p>
-        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#091438;"), class: "btn btn-dark-blue" %>
+        <%= link_to 'Download Your Resume', resume_path(current_user, format: "pdf", color_theme: "#091438;"), class: "btn btn-dark-blue", target: "_blank" %>
       </div>
     </div>
   </div>
