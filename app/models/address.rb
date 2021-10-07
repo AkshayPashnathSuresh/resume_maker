@@ -13,6 +13,9 @@ class Address < ApplicationRecord
   validates :linkedIn_url, presence: true
   validates :twitter_url, presence: true
   validates :repository_url, presence: true, if: :repository?
+  validates_format_of :post_cd,
+                  with: /\A\d{3}-\d{4}|\A\d{5}\z/,
+                  message: "should be in the format 123-1234 or 123456"
   def self.hosting_services
     ['Select your hosting service', 'Github', 'Bitbucket']
   end
