@@ -6,7 +6,7 @@ en:
     city: "Current City"
     remaining_address: "Remaining Address"
     current_country: "Current Country"
-    current_zipcode: "Current Zip Code"
+    current_zipcode: "Current Post Code(123-1234 or 123456)"
     mail_id: "Mail Id"
     contact_number: "Contact Number"
     linkedIn_url: "LinkedIn Url"
