@@ -32,6 +32,8 @@ services:
       - gem_cache:/usr/local/bundle/gems
     networks:
       - development
+    environment:
+      - EDITOR=vim
     ports:
       - 3000:3000
     stdin_open: true
