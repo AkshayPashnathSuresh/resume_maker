@@ -19,6 +19,7 @@ RUN wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg |
 
 RUN set -x && apt-get update -y -qq && apt-get install -yq nodejs yarn
 
+RUN apt-get install -y vim
 
 RUN gem install bundler --version "$BUNDLE_VERSION" \
 && rm -rf $GEM_HOME/cache/*
