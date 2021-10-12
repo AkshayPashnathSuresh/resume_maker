@@ -27,11 +27,9 @@
                     <%= t('navbar.privacy') %>
                 </a>
                 <%= link_to fa_icon('cog', class: "fa-sm fa-fw mr-2 text-gray-400", text: t('navbar.settings')), settings_path, class: 'dropdown-item' %>
-                          
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-building fa-sm fa-fw mr-2 text-gray-400"></i>
-                    <%= t('navbar.about_us') %>
-                </a>
+
+                <%= link_to fa_icon('building', class: "fa-sm fa-fw mr-2 text-gray-400", text: t('navbar.about_us')), about_path, class: 'dropdown-item' %>
+
                 <%= link_to fa_icon('sign-out', class: "fa-sm fa-fw mr-2 text-gray-400", text: t('navbar.sign_out')), '#logoutModal', 'data-toggle' => 'modal', class: 'dropdown-item' %>
             </div>
         </li>

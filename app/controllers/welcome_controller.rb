@@ -9,6 +9,8 @@ class WelcomeController < ApplicationController
     @personal = Personal.where(user_id: current_user.id)
   end
 
+  def about; end
+
   def destroy
     current_user.destroy
     flash[:notice] = t('welcome_controller.user_delete_message')
