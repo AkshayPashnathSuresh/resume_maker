@@ -1,0 +1,7 @@
+en:
+  custom_registrations:
+    no_of_chars_validation_msg: "(Must contain 8 or more characters)"
+    digit_validation_msg: "(Must contain a digit)"
+    lower_case_validation_msg: "(Must contain a lower case character)"
+    upper_case_validation_msg: "(Must contain an upper case character)"
+    symbol_validation_msg: "(Must contain a symbol)"
