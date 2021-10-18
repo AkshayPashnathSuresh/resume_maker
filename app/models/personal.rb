@@ -9,6 +9,6 @@ class Personal < ApplicationRecord
   validates :known_languages, presence: true
   validates :area_of_interests, presence: true
   validates :personal_profile, presence: true
-  validates :carreer_objective, presence: true
+  # validates :carreer_objective, presence: true
   validates :current_designation, presence: true
 end
