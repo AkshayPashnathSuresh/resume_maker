@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+         :skip => [:registrations]
+
+  devise_scope :user do
+    get "user/sign_up", to: "users/registrations#new", as: :new_user_registration
+    post "user/sign_up", to: "users/registrations#create", as: :user_registration
+  end
+
   root 'welcome#index'
   match '/404', to: 'errors#not_found', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
