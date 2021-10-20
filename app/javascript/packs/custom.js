@@ -37,8 +37,10 @@ document.addEventListener('turbolinks:load', function() {
 function checkHostingService(){
   if(document. getElementById("address_hosting_service").value == hostingServiceBaseOption){
     document. getElementById("address_repository_url"). value = "";
+    document. getElementById("address_repository_url").style.backgroundColor = '#ffffff';
     document. getElementById("address_repository_url"). disabled = true;
   }else{
     document. getElementById("address_repository_url"). disabled = false;
+    document. getElementById("address_repository_url").style.backgroundColor = '#FADBD4';
   }
 }

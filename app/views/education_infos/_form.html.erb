@@ -3,19 +3,19 @@
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <%= text_field_tag "educations[#{index}][institution_name]", education.institution_name, 
-                    class: 'form-control form-control-user', placeholder: t('education_infos.institution_name') %>
+                    class: 'form-control form-control-user required-field', placeholder: t('education_infos.institution_name') %>
             </div>
 
             <div class="col-sm-6">
                 <%= text_field_tag "educations[#{index}][course_name]", education.course_name,
-                    class: 'form-control form-control-user', placeholder: t('education_infos.course_name') %>
+                    class: 'form-control form-control-user required-field', placeholder: t('education_infos.course_name') %>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <%= label_tag t('common.from') %>
                 <%= date_field_tag "educations[#{index}][studied_from]", education.studied_from,
-                    max: Date.today, class: 'form-control form-control-user' %>
+                    max: Date.today, class: 'form-control form-control-user required-field' %>
             </div>
 
             <div class="col-sm-6">
@@ -24,12 +24,14 @@
                     max: Date.today, class: 'form-control form-control-user' %>
             </div>
         </div>
+        <!--
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <%= text_field_tag "educations[#{index}][grade_point]", education.grade_point, 
                     class: 'form-control form-control-user', placeholder: t('education_infos.grade_point') %>
             </div>
         </div>
+        -->
         <div class="form-group">
             <%= text_area_tag "educations[#{index}][achivements]", education.achivements, 
                 class: 'form-control form-control-textarea', placeholder: t('education_infos.achievements') %>

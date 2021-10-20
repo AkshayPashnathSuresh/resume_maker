@@ -2,12 +2,12 @@
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <input type="text" name="works[<%= @index %>][company_name]" id="works_<%= @index %>_company_name"
-             class="form-control form-control-user" placeholder="<%= t('work_infos.company_name') %>"/>
+             class="form-control form-control-user required-field" placeholder="<%= t('work_infos.company_name') %>"/>
         </div>
 
         <div class="col-sm-6">
             <input type="text" name="works[<%= @index %>][designation]" id="works_<%= @index %>_designation"
-             class="form-control form-control-user" placeholder="<%= t('work_infos.designation') %>" />
+             class="form-control form-control-user required-field" placeholder="<%= t('work_infos.designation') %>" />
         </div>
     </div>
 
@@ -15,7 +15,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="from_date"><%= t('common.from') %></label>
             <input type="date" name="works[<%= @index %>][work_from]" id="works_<%= @index %>_work_from" 
-                max='<%= Date.today %>', class="form-control form-control-user"/>
+                max='<%= Date.today %>', class="form-control form-control-user required-field"/>
         </div>
 
         <div class="col-sm-6">
@@ -27,7 +27,7 @@
 
     <div class="form-group">
         <textarea name="works[<%= @index %>][job_description]" id="works_<%= @index %>_job_description"
-         class="form-control form-control-textarea"  placeholder="<%= t('work_infos.job_description') %>"></textarea>
+         class="form-control form-control-textarea required-field"  placeholder="<%= t('work_infos.job_description') %>"></textarea>
     </div>
 
     <div class="form-group row">

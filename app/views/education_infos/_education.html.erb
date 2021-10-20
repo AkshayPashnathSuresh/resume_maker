@@ -2,12 +2,12 @@
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <input type="text" name="educations[<%= @index %>][institution_name]" id="educations_<%= @index %>_institution_name"
-             class="form-control form-control-user", placeholder="<%= t('education_infos.institution_name') %>"/>
+             class="form-control form-control-user required-field", placeholder="<%= t('education_infos.institution_name') %>"/>
         </div>
 
         <div class="col-sm-6">
             <input type="text" name="educations[<%= @index %>][course_name]" id="educations_<%= @index %>_course_name"
-             class="form-control form-control-user" placeholder="<%= t('education_infos.course_name') %>" />
+             class="form-control form-control-user required-field" placeholder="<%= t('education_infos.course_name') %>" />
         </div>
     </div>
 
@@ -15,7 +15,7 @@
         <div class="col-sm-6 mb-3 mb-sm-0">
             <label for="from_date"><%= t('common.from') %></label>
             <input type="date" name="educations[<%= @index %>][studied_from]" id="educations_<%= @index %>_studied_from" 
-                max='<%= Date.today %>', class="form-control form-control-user"/>
+                max='<%= Date.today %>', class="form-control form-control-user required-field"/>
         </div>
 
         <div class="col-sm-6">
@@ -24,14 +24,14 @@
                 max='<%= Date.today %>', class="form-control form-control-user"/>
         </div>
     </div>
-
+    <!--
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
             <input type="text" name="educations[<%= @index %>][grade_point]" id="educations_<%= @index %>_grade_point"
             class="form-control form-control-user" placeholder="<%= t('education_infos.grade_point') %>" />
         </div>
     </div>
-
+    -->
     <div class="form-group">
         <textarea name="educations[<%= @index %>][achivements]" id="educations_<%= @index %>_achivements"
          class="form-control form-control-textarea"  placeholder="<%= t('education_infos.achievements') %>"></textarea>

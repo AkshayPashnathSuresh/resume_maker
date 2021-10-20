@@ -3,13 +3,13 @@
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
                 <%= text_field_tag "projects[#{index}][title]", project.title, 
-                    class: 'form-control form-control-user', placeholder: t('project_infos.project_title') %>
+                    class: 'form-control form-control-user required-field', placeholder: t('project_infos.project_title') %>
             </div>
         </div>
         
         <div class="form-group">
             <%= text_area_tag "projects[#{index}][description]", project.description,  size: "30x5",
-                class: 'form-control form-control-textarea', placeholder: t('project_infos.project_description') %>
+                class: 'form-control form-control-textarea required-field', placeholder: t('project_infos.project_description') %>
         </div>
         <div class="form-group row">
             <div class="col-sm-12 ">
