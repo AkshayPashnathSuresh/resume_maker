@@ -33,22 +33,26 @@
         <%= @address.phone_no %>
       </td>
     </tr>
-    <tr>
-      <td align="center" valign="top" class="marginList"  style="width: 20%;">
-        <i class="fa fa-linkedin-square fa-sm" aria-hidden="true"></i>
-      </td>
-      <td class="marginList" style="width: 80%;">
-        <div style="width: 100%; word-break:break-word;"><%= @address.linkedIn_url %></div>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" valign="top" class="marginList"  style="width: 20%;">
-        <i class="fa fa-twitter-square fa-sm" aria-hidden="true"></i>
-      </td>
-      <td class="marginList" style="width: 80%;">
-        <div style="width: 100%; word-break:break-word;"><%= @address.twitter_url %></div>
-      </td>
-    </tr>
+    <% if @address.linkedIn_url.present? %>
+      <tr>
+        <td align="center" valign="top" class="marginList"  style="width: 20%;">
+          <i class="fa fa-linkedin-square fa-sm" aria-hidden="true"></i>
+        </td>
+        <td class="marginList" style="width: 80%;">
+          <div style="width: 100%; word-break:break-word;"><%= @address.linkedIn_url %></div>
+        </td>
+      </tr>
+    <% end %>
+    <% if @address.twitter_url.present? %>
+      <tr>
+        <td align="center" valign="top" class="marginList"  style="width: 20%;">
+          <i class="fa fa-twitter-square fa-sm" aria-hidden="true"></i>
+        </td>
+        <td class="marginList" style="width: 80%;">
+          <div style="width: 100%; word-break:break-word;"><%= @address.twitter_url %></div>
+        </td>
+      </tr>
+    <% end %>
     <% if Address.hosting_services[1,2].include? @address.hosting_service %>
       <tr>
         <td align="center" valign="top" class="marginList"  style="width: 20%;">

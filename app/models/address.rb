@@ -10,8 +10,8 @@ class Address < ApplicationRecord
   validates :post_cd, presence: true
   # validates :mail_id, presence: true
   validates :phone_no, presence: true
-  validates :linkedIn_url, presence: true
-  validates :twitter_url, presence: true
+  # validates :linkedIn_url, presence: true
+  # validates :twitter_url, presence: true
   validates :repository_url, presence: true, if: :repository?
   validates_format_of :post_cd,
                       with: /\A\d{3}-\d{4}|\A\d{5}\z/,

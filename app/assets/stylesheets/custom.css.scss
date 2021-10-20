@@ -58,7 +58,9 @@
   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
   }
-  
+  .required-field {
+    background-color:  #F9E1DB!important;
+  }
   body {
     margin: 0;
     font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

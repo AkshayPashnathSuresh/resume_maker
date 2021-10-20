@@ -5,6 +5,6 @@ class Education < ApplicationRecord
   validates :institution_name, presence: true
   validates :course_name, presence: true
   validates :studied_from, presence: true
-  validates :grade_point, presence: true
-  validates :achivements, presence: true
+  # validates :grade_point, presence: true
+  # validates :achivements, presence: true
 end
