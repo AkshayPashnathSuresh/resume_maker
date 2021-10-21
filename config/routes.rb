@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :welcome, only: [:destroy]
   get 'settings', to: 'welcome#settings'
   get 'about', to: 'welcome#about'
+  get 'privacy_policy', to: 'welcome#privacy_policy'
   get 'add_new_education', to: 'education_infos#add_new_education'
   get 'add_new_work', to: 'work_infos#add_new_work'
   get 'add_new_project', to: 'project_infos#add_new_project'
