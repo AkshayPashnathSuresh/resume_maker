@@ -11,6 +11,8 @@ class WelcomeController < ApplicationController
 
   def about; end
 
+  def privacy_policy; end
+
   def destroy
     current_user.destroy
     flash[:notice] = t('welcome_controller.user_delete_message')
