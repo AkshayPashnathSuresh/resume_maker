@@ -5,3 +5,5 @@ en:
     lower_case_validation_msg: "(Must contain a lower case character)"
     upper_case_validation_msg: "(Must contain an upper case character)"
     symbol_validation_msg: "(Must contain a symbol)"
+    password_recovery_notice: "There is no password recovery mechanism in this version of Resume Maker.
+                              Kindly remember your password."
