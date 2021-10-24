@@ -28,8 +28,8 @@
               <td valign="top">
                 <%= render 'resumes/resume_layout1/name' %>
                 <%= render 'resumes/resume_layout1/personal_profile' %>
-                <%= render 'resumes/resume_layout1/experience' if @works.present?  %>
                 <%= render 'resumes/resume_layout1/education' if @educations.present?  %>
+                <%= render 'resumes/resume_layout1/experience' if @works.present?  %>
                 <%= render 'resumes/resume_layout1/certifications' unless @personal.certifications.empty? %>
                 <%= render 'resumes/resume_layout1/projects' if @projects.present? %>
               </td>
