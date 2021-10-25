@@ -8,17 +8,17 @@ en:
       delete_button: "Delete User account"
     about:
       about_title: "About Resume Maker"
-      description: "&emsp;<strong>Resume Maker</strong> is an ideal platform for IT Professionals to build job-worthy 
-                    resumes as fast as possible in a simple process. Resume Maker is designed for IT Professionals so that an IT Job-seeker can create strong
-                    job-worthy resumes with no cost. It is developed by <em>Akshay</em> an IT Professional
-                    with the help of his best friend <em>PaulJoe</em> an IT Professional. "
-      story: "&emsp;The Idea of Resume Maker came when <em>Akshay</em> started seeking new job. During his Job seeking process,
-             he decided to create a resume. With that intention, <em>Akshay</em> started searching online resume templates.
-             Unfortunately none of the templates were up to his satisfaction. Also In the case of online resume templates, 
-             it's not free to hand, we have to pay money for templates which are not up to our satisfaction. <em>Akshay</em> 
-             discusssed his situation and thoughts to <em>PaulJoe</em> an IT enthusiastic and <em>PaulJoe</em> challenged 
-             <em>Akshay</em> to create his own <strong>Resume Maker</strong> tool. The mind set behind the challenging is that,
-             the man-power behind the online resume templates are IT Professionals and we (<em>Akshay</em> and <em>PaulJoe</em>)
-             are also IT Professionals. As an IT Professional, it's not Good to depend on other IT professionals for things that 
-             we can do, if we have a mind to do. With all inspirations from other Great Engineers in this world, <em>Akshay</em>
-             started developing his own <strong>Resume Maker</strong> with the most valuable reviewing done by his best friend <em>PaulJoe</em>."
+      description: "&emsp;<strong>The Resume Maker</strong> is an ideal platform for IT professionals to build job-worthy 
+                    resumes as quickly as possible in a simple process. The Resume Maker is designed for IT professionals 
+                    so that an IT job-seeker can create strong, job-worthy resumes at no cost.  It was developed by <em>Akshay</em>,
+                    an IT Professional, with the help of his best friend, <em>PaulJoe</em>, also an IT professional. "
+      story: "&emsp;The idea of the Resume Maker came when <em>Akshay</em> started seeking a new job. During his job search process, 
+             he decided to create a resume. With that intention, <em>Akshay</em>  started searching for online resume templates.
+             Unfortunately, none of the templates were up to his satisfaction. Also, in the case of online resume templates,
+             they're not free to download. We have to pay money for templates that are not up to our satisfaction. <em>Akshay</em> 
+             discussed his situation and thoughts with <em>PaulJoe</em>, an IT enthusiast,  and <em>PaulJoe</em> challenged  
+             <em>Akshay</em> to create his own <strong>Resume Maker</strong> tool. The mind set behind the challenge is that 
+             the manpower behind the online resume templates are IT professionals, and we (<em>Akshay</em> and <em>PaulJoe</em>)
+             are also IT Professionals. As an IT professional, it's not good to depend on other IT professionals for things that
+             we can do if we have a mind to do. With all the inspiration from other great engineers in this world, <em>Akshay</em>
+             started developing his own <strong>Resume Maker</strong> with the most valuable review done by his best friend, <em>PaulJoe</em>."
