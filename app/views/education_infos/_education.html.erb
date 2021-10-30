@@ -1,27 +1,35 @@
 <div id="educations<%= @index %>">
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" name="educations[<%= @index %>][institution_name]" id="educations_<%= @index %>_institution_name"
-             class="form-control form-control-user required-field", placeholder="<%= t('education_infos.institution_name') %>"/>
+            <span class="required-input">
+                <input type="text" name="educations[<%= @index %>][institution_name]" id="educations_<%= @index %>_institution_name"
+                class="form-control form-control-user", placeholder="<%= t('education_infos.institution_name') %>"/>
+            </span>
         </div>
 
         <div class="col-sm-6">
-            <input type="text" name="educations[<%= @index %>][course_name]" id="educations_<%= @index %>_course_name"
-             class="form-control form-control-user required-field" placeholder="<%= t('education_infos.course_name') %>" />
+            <span class="required-input">
+                <input type="text" name="educations[<%= @index %>][course_name]" id="educations_<%= @index %>_course_name"
+                class="form-control form-control-user" placeholder="<%= t('education_infos.course_name') %>" />
+            </span>
         </div>
     </div>
 
     <div class="form-group row">
         <div class="col-sm-6 mb-3 mb-sm-0">
-            <label for="from_date"><%= t('common.from') %></label>
-            <input type="date" name="educations[<%= @index %>][studied_from]" id="educations_<%= @index %>_studied_from" 
-                max='<%= Date.today %>', class="form-control form-control-user required-field"/>
+            <span class="required-input">
+                <label for="from_date"><%= t('common.from') %></label>
+                <input type="date" name="educations[<%= @index %>][studied_from]" id="educations_<%= @index %>_studied_from" 
+                    max='<%= Date.today %>', class="form-control form-control-user"/>
+            </span>
         </div>
 
         <div class="col-sm-6">
-            <label for="to_date"><%= t('common.to') %></label>
-            <input type="date" name="educations[<%= @index %>][studied_to]" id="educations_<%= @index %>studied_to" 
-                max='<%= Date.today %>', class="form-control form-control-user"/>
+            <span class="nonrequired-input">
+                <label for="to_date"><%= t('common.to') %></label>
+                <input type="date" name="educations[<%= @index %>][studied_to]" id="educations_<%= @index %>studied_to" 
+                    max='<%= Date.today %>', class="form-control form-control-user"/>
+            </span>
         </div>
     </div>
     <!--
@@ -33,8 +41,10 @@
     </div>
     -->
     <div class="form-group">
-        <textarea name="educations[<%= @index %>][achivements]" id="educations_<%= @index %>_achivements"
-         class="form-control form-control-textarea" rows="8" cols="50" placeholder="<%= t('education_infos.achievements') %>"></textarea>
+        <span class="nonrequired-input">
+            <textarea name="educations[<%= @index %>][achivements]" id="educations_<%= @index %>_achivements"
+            class="form-control form-control-textarea" rows="8" cols="50" placeholder="<%= t('education_infos.achievements') %>"></textarea>
+        </span>
     </div>
 
     <div class="form-group row">

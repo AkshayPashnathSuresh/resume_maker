@@ -2,26 +2,34 @@
     <div id="educations<%= index %>">
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <%= text_field_tag "educations[#{index}][institution_name]", education.institution_name, 
-                    class: 'form-control form-control-user required-field', placeholder: t('education_infos.institution_name') %>
+                <span class="required-input">
+                    <%= text_field_tag "educations[#{index}][institution_name]", education.institution_name, 
+                        class: 'form-control form-control-user', placeholder: t('education_infos.institution_name') %>
+                </span>
             </div>
 
             <div class="col-sm-6">
-                <%= text_field_tag "educations[#{index}][course_name]", education.course_name,
-                    class: 'form-control form-control-user required-field', placeholder: t('education_infos.course_name') %>
+                <span class="required-input">
+                    <%= text_field_tag "educations[#{index}][course_name]", education.course_name,
+                        class: 'form-control form-control-user', placeholder: t('education_infos.course_name') %>
+                </span>
             </div>
         </div>
         <div class="form-group row">
             <div class="col-sm-6 mb-3 mb-sm-0">
-                <%= label_tag t('common.from') %>
-                <%= date_field_tag "educations[#{index}][studied_from]", education.studied_from,
-                    max: Date.today, class: 'form-control form-control-user required-field' %>
+                <span class="required-input">
+                    <%= label_tag t('common.from') %>
+                    <%= date_field_tag "educations[#{index}][studied_from]", education.studied_from,
+                        max: Date.today, class: 'form-control form-control-user' %>
+                </span>
             </div>
 
             <div class="col-sm-6">
-                <%= label_tag t('common.to')%>
-                <%= date_field_tag "educations[#{index}][studied_to]", education.studied_to, 
-                    max: Date.today, class: 'form-control form-control-user' %>
+                <span class="nonrequired-input">
+                    <%= label_tag t('common.to')%>
+                    <%= date_field_tag "educations[#{index}][studied_to]", education.studied_to, 
+                        max: Date.today, class: 'form-control form-control-user' %>
+                </span>
             </div>
         </div>
         <!--
@@ -33,8 +41,10 @@
         </div>
         -->
         <div class="form-group">
-            <%= text_area_tag "educations[#{index}][achivements]", education.achivements, 
+            <span class="nonrequired-input">
+                <%= text_area_tag "educations[#{index}][achivements]", education.achivements, 
                 class: 'form-control form-control-textarea', placeholder: t('education_infos.achievements'), size: "50x8" %>
+            </span>
         </div>
         <div class="form-group row">
             <div class="col-sm-12 ">
