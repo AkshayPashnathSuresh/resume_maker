@@ -1,34 +1,46 @@
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.text_field :nationality, class: 'form-control required-field',
-        placeholder: t('address_infos.nationality') %>
+        <span class="required-input">
+            <%= obj.text_field :nationality, class: 'form-control',
+            placeholder: t('address_infos.nationality') %>
+        </span>
     </div>
 
     <div class="col-sm-6">
-        <%= obj.text_field :province, class: 'form-control required-field',
-        placeholder: t('address_infos.province') %>
+        <span class="required-input">
+            <%= obj.text_field :province, class: 'form-control',
+            placeholder: t('address_infos.province') %>
+        </span>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.text_field :city, class: 'form-control required-field',
-        placeholder: t('address_infos.city') %>
+        <span class="required-input">
+            <%= obj.text_field :city, class: 'form-control',
+            placeholder: t('address_infos.city') %>
+        </span>
     </div>
 
     <div class="col-sm-6">
-        <%= obj.text_field :remaining_address, class: 'form-control required-field',
-        placeholder: t('address_infos.remaining_address') %>
+        <span class="required-input">
+            <%= obj.text_field :remaining_address, class: 'form-control',
+            placeholder: t('address_infos.remaining_address') %>
+        </span>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.text_field :country, class: 'form-control required-field',
-        placeholder: t('address_infos.current_country') %>
+        <span class="required-input">
+            <%= obj.text_field :country, class: 'form-control',
+            placeholder: t('address_infos.current_country') %>
+        </span>
     </div>
 
     <div class="col-sm-6">
-        <%= obj.text_field :post_cd, class: 'form-control required-field',
-        placeholder: t('address_infos.current_zipcode') %>
+        <span class="required-input">
+            <%= obj.text_field :post_cd, class: 'form-control',
+            placeholder: t('address_infos.current_zipcode') %>
+        </span>
     </div>
 </div>
 <div class="form-group row">
@@ -38,29 +50,39 @@
     </div>-->
 
     <div class="col-sm-6">
-        <%= obj.telephone_field :phone_no, class: 'form-control required-field',
-        placeholder: t('address_infos.contact_number') %>
+        <span class="required-input">
+            <%= obj.telephone_field :phone_no, class: 'form-control',
+            placeholder: t('address_infos.contact_number') %>
+        </span>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.text_field :linkedIn_url, class: 'form-control',
-        placeholder: t('address_infos.linkedIn_url') %>
+        <span class="nonrequired-input">
+            <%= obj.text_field :linkedIn_url, class: 'form-control',
+            placeholder: t('address_infos.linkedIn_url') %>
+        </span>
     </div>
 
     <div class="col-sm-6">
-        <%= obj.text_field :twitter_url, class: 'form-control',
-        placeholder: t('address_infos.twitter_url') %>
+        <span class="nonrequired-input">
+            <%= obj.text_field :twitter_url, class: 'form-control',
+            placeholder: t('address_infos.twitter_url') %>
+        </span>
     </div>
 </div>
 <div class="form-group row">
     <div class="col-sm-6 mb-3 mb-sm-0">
-        <%= obj.select(:hosting_service, Address.hosting_services, 
-            {}, {class: "form-control", :onchange => "selectHostingService()" }) %>
+        <span class="nonrequired-input">
+            <%= obj.select(:hosting_service, Address.hosting_services, 
+                {}, {class: "form-control", :onchange => "selectHostingService()" }) %>
+        </span>
     </div>
 
     <div class="col-sm-6">
-        <%= obj.text_field :repository_url, class: 'form-control',
-        placeholder: t('address_infos.repository_url') %>
+        <span class="nonrequired-input">
+            <%= obj.text_field :repository_url, class: 'form-control',
+            placeholder: t('address_infos.repository_url') %>
+        </span>
     </div>
 </div>
